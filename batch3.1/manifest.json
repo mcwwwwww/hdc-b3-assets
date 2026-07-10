@@ -66,7 +66,7 @@
    "vercel_url": "https://jonathan-barker-garden-services.vercel.app"
   },
   {
-   "slug": "jk-landscaping",
+   "slug": "jk-landscaping-lancs",
    "business": "JK Landscaping",
    "contact": "",
    "phone": "07931 866884",
@@ -84,14 +84,14 @@
    "ad_text": "a Call today for a FREE No Obligation Quote: T: 01614510276 M: 07931 866884",
    "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/jk-landscaping.png",
    "image_note": "exact crop of their magazine advert",
-   "vercel_url": "https://jk-landscaping.vercel.app"
+   "vercel_url": "https://jk-landscaping-lancs.vercel.app"
   },
   {
    "slug": "the-little-foot-room-podiatry",
    "business": "The Little Foot Room Podiatry",
    "contact": "",
    "phone": "07306 700222",
-   "email": "thelittlefootroam@gmail.com",
+   "email": "thelittlefootroom@gmail.com",
    "category": "podiatry",
    "town": "Chorley",
    "county": "Lancashire",
@@ -112,7 +112,7 @@
    "business": "The Holle Edit",
    "contact": "",
    "phone": "07508 901589",
-   "email": "thehollieedit@outlook.cam",
+   "email": "thehollieedit@outlook.com",
    "category": "hairdressing",
    "town": "Chorley",
    "county": "Lancashire",
@@ -175,7 +175,7 @@
    "business": "Steph & Jenny's Kitchen",
    "contact": "Steph & Jenny",
    "phone": "07813 923595",
-   "email": "elinfo@jordansllp.com",
+   "email": "",
    "category": "catering/cafe",
    "town": "Kiveton Park",
    "county": "South Yorkshire",
@@ -196,7 +196,7 @@
    "business": "Shaun Wilson Tiling",
    "contact": "Shaun Wilson",
    "phone": "07766 180380",
-   "email": "cyfencing@outlook.com",
+   "email": "shaunwilsontiling@btinternet.com",
    "category": "tiling",
    "town": "York",
    "county": "North Yorkshire",
@@ -217,7 +217,7 @@
    "business": "KML Roofing",
    "contact": "",
    "phone": "07824 119792",
-   "email": "hello@mwvremovals.co.uk",
+   "email": "kmlroofing@hotmail.com",
    "category": "roofing",
    "town": "York",
    "county": "North Yorkshire",
@@ -289,7 +289,7 @@
    "business": "A&J Joinery York",
    "contact": "",
    "phone": "07778 811098",
-   "email": "ja.j_joinery24@gmail.com",
+   "email": "a.j.joinery24@gmail.com",
    "category": "joinery",
    "town": "York",
    "county": "North Yorkshire",
@@ -310,7 +310,7 @@
    "business": "Xtreme Roofing",
    "contact": "Ben",
    "phone": "07902 494124",
-   "email": "ja.j_joinery24@gmail.com",
+   "email": "xtreme_elite_roofing@outlook.com",
    "category": "roofing",
    "town": "York",
    "county": "North Yorkshire",
@@ -346,7 +346,7 @@
    "business": "JC Yorkshire Roofing",
    "contact": "",
    "phone": "07522 529967",
-   "email": "office@cjramsay.co.uk",
+   "email": "",
    "category": "roofing",
    "town": "York",
    "county": "North Yorkshire",
@@ -367,7 +367,7 @@
    "business": "Clifton Carpet Cleaning",
    "contact": "Mick",
    "phone": "07985 270375",
-   "email": "info@visionpye.co.uk",
+   "email": "",
    "category": "carpet cleaning",
    "town": "York",
    "county": "North Yorkshire",
@@ -384,11 +384,11 @@
    "vercel_url": "https://clifton-carpet-cleaning.vercel.app"
   },
   {
-   "slug": "sally-anne-s-carpet-and-upholstery-cleaning",
+   "slug": "sally-annes-carpet-cleaning",
    "business": "Sally-Anne's Carpet & Upholstery Cleaning",
    "contact": "Sally-Anne",
    "phone": "07989 390880",
-   "email": "alarms@rytheralarms.co.uk",
+   "email": "",
    "category": "carpet cleaning",
    "town": "Wetherby",
    "county": "West Yorkshire",
@@ -402,7 +402,7 @@
    "ad_text": "Sally-Anne's T H E P E ST Carpet \u00ab Upholstery COMPANY e . . Cleaning Domestic & commercial, York-based Pest Control. Insured, professionally trained & fully qualified. * Rat, Mouse & Squirrel + Solar Panel Pigeon Give your carpets & Control Proofing * Bird Deterrents & Control + Flea Infestations upholstery a new lease * Mole Trapping & Many More i * Wood T of life. You'll be amazed \u00abWasp Nest Removal Pa how good they look! - er\u201d 07989 390880 Fora quick response, Call Jack on: 01904 206 041 visi",
    "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/sally-anne-s-carpet-and-upholstery-cleaning.png",
    "image_note": "exact crop of their magazine advert",
-   "vercel_url": "https://sally-anne-s-carpet-and-upholstery-cleaning.vercel.app"
+   "vercel_url": "https://sally-annes-carpet-cleaning.vercel.app"
   }
  ]
 }
