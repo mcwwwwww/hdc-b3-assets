@@ -1,306 +1,436 @@
 {
- "batch": "batch3.3",
- "instructions": "For EACH lead in the leads array, build a one-page, mobile-responsive WEBSITE as a SINGLE self-contained HTML file named <slug>.html (all CSS/JS inline, no external assets except the Formspree POST). If a palette array is given, use those hex colours. If you cannot view the image, design tastefully from the structured fields; never invent facts.\nSTRUCTURE per site:\n1. Hero \u2014 business name as a styled text wordmark, short punchy tagline, phone number as a large tap-to-call button (href=\"tel:+44...\" )\n2. Services \u2014 inferred ONLY from category + ad_text, as tidy cards/list\n3. Why choose us \u2014 3 short trust points drawn from the details given (local, friendly, free quotes etc.)\n4. Contact \u2014 an enquiry form (name, phone, message) that POSTs to https://formspree.io/f/mpqgeoaj with a hidden input name=\"_subject\" value=\"<business> enquiry\" (it must actually submit \u2014 not decorative or mailto-only), plus the tap-to-call phone link\nTECHNICAL (every site):\n- Mobile-first; correct down to 360px wide, no horizontal scroll.\n- <title>\"<business> | <short service> \u2014 <town>, <county>\"; meta description ~150 chars; viewport meta.\n- Open Graph (og:type=website, og:title, og:description, og:site_name, og:locale=en_GB), Twitter summary card, <link rel=\"canonical\" href=\"<vercel_url>/\">.\n- Use ONLY facts provided \u2014 do not invent services, prices, reviews, certifications, awards or years in business.\n- Tone: friendly, local, trustworthy. UK English. Tight copy \u2014 small local business, not a corporation.\n- Footer: \"<business> \u2014 serving <town> & surrounding areas. <phone>\"\nDELIVERY: when all 20 sites are done, package the 20 HTML files into a zip named <batch>-sites.zip.\nPREFERRED: upload the zip with: curl -F \"reqtype=fileupload\" -F \"time=72h\" -F \"fileToUpload=@<batch>-sites.zip\" https://litterbox.catbox.moe/resources/internals/api.php  \u2014 then reply with the returned URL.\nIF you cannot make network requests from your environment: provide the zip (or each HTML file) as downloadable output named <batch>-sites.zip instead, and say so. IMPORTANT: ignore image_url fields entirely \u2014 do not fetch them; design from palette + ad_text. ad_text is raw OCR and may contain typos: use it to identify services only, never copy garbled text verbatim. If an email looks inconsistent with the business name, omit it.",
+ "batch": "3.3",
+ "formspree": "https://formspree.io/f/mpqgeoaj",
+ "instructions": {
+  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England.",
+  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; }. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
+  "design": "Design each site from its palette[] colours and ad_text. Use palette[0] as the primary brand colour. Clean, modern, mobile-first, professional. Sections: hero (logo, business name, one-line pitch, phone call-to-action button with tel: link), services (from ad_text), why-choose-us / trust points (experience, insured, free quotes \u2014 only claims present in ad_text), service area (town + surrounding area), contact section.",
+  "contact_form": "Every site gets a contact form posting to https://formspree.io/f/mpqgeoaj with method POST, fields: name, phone, message, and a hidden input name='_subject' value='<business> enquiry'. Also show the business phone number prominently with a tel: link.",
+  "phone_rule": "Use the exact phone (and landline if present) given in this manifest. Never invent phone numbers, emails, addresses, prices, or reviews.",
+  "email_rule": "Only show an email address if the manifest email field is non-empty; use it exactly as written.",
+  "footer": "Small footer: '<business> \u2014 <town>, <county>'. No fake copyright years, no invented company registration numbers.",
+  "seo": "Each page: <title><business> | <category> in <town></title> and a meta description using the ad_text.",
+  "deliverable": "Zip all 20 files as batch3.N-sites.zip (N = this manifest's number) and provide a download link or upload URL (litterbox.catbox.moe 72h, or any fetchable URL)."
+ },
  "leads": [
-  {
-   "slug": "tj-plastering-contractors",
-   "business": "TJ Plastering Contractors",
-   "contact": "Keenan",
-   "phone": "07828 995548",
-   "email": "",
-   "category": "plastering",
-   "town": "Scarborough",
-   "county": "North Yorkshire",
-   "palette": [],
-   "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/tj-plastering-contractors.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://tj-plastering-contractors.vercel.app"
-  },
   {
    "slug": "col-dock-plastering",
    "business": "Col Dock Plastering",
    "contact": "Colin",
    "phone": "07467 243264",
-   "email": "",
+   "landline": "",
+   "email": "colin14594@icloud.com",
    "category": "plastering",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
-   "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/col-dock-plastering.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://col-dock-plastering.vercel.app"
+   "palette": [
+    "#000000",
+    "#fde9c1",
+    "#5f4c2c",
+    "#917a54"
+   ],
+   "ad_text": "Get in Touch Today \\ 07467 243264 @ Col Dock plastering for a FREE Quote & colinl4594@icloud.com",
+   "logo_note": "full-page ad; gold shield logo",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/col-dock-plastering/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/col-dock-plastering/ad.png"
   },
   {
    "slug": "steve-mitchinson-plumbing-and-heating",
    "business": "Steve Mitchinson Plumbing & Heating",
    "contact": "Steve Mitchinson",
    "phone": "07941 645532",
+   "landline": "",
    "email": "",
    "category": "plumbing",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#231f20",
+    "#d6dadb",
+    "#83574b"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/steve-mitchinson-plumbing-and-heating.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://steve-mitchinson-plumbing-and-heating.vercel.app"
+   "logo_note": "wordmark header + tap graphic",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/steve-mitchinson-plumbing-and-heating/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/steve-mitchinson-plumbing-and-heating/ad.png"
   },
   {
    "slug": "q-plumbing-services",
    "business": "Q Plumbing Services",
    "contact": "",
    "phone": "07948 463156",
+   "landline": "01723 882176",
    "email": "",
    "category": "plumbing",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#01549c",
+    "#006dae",
+    "#2c417f",
+    "#80abce"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/q-plumbing-services.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://q-plumbing-services.vercel.app"
+   "logo_note": "red Q + white wordmark on blue",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/q-plumbing-services/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/q-plumbing-services/ad.png"
   },
   {
-   "slug": "little-al-s-plumbing-and-heating",
+   "slug": "little-als-plumbing-and-heating",
    "business": "Little Al's Plumbing & Heating",
    "contact": "Al",
    "phone": "07980 276539",
+   "landline": "",
    "email": "",
    "category": "plumbing",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#41ae4b",
+    "#2093d2",
+    "#e3ecd1",
+    "#73b37e"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/little-al-s-plumbing-and-heating.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://little-al-s-plumbing-and-heating.vercel.app"
+   "logo_note": "Little Al's yellow script",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/little-als-plumbing-and-heating/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/little-als-plumbing-and-heating/ad.png"
   },
   {
    "slug": "paul-pinder-paving",
    "business": "Paul Pinder Paving",
    "contact": "James & Paul",
    "phone": "07547 355993",
+   "landline": "",
    "email": "",
    "category": "paving",
    "town": "Hunmanby & Filey",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#231f20",
+    "#c08550",
+    "#b4a68e",
+    "#eeefef"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/paul-pinder-paving.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://paul-pinder-paving.vercel.app"
+   "logo_note": "orange title block; James 07547 355993 / Paul 07989 428048",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-pinder-paving/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-pinder-paving/ad.png"
   },
   {
    "slug": "blm-plumbing-and-heating",
    "business": "BLM Plumbing & Heating",
    "contact": "",
    "phone": "07709 848304",
+   "landline": "",
    "email": "",
    "category": "plumbing",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#8d9ba4",
+    "#565758",
+    "#c2c8c9",
+    "#eaede4"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/blm-plumbing-and-heating.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://blm-plumbing-and-heating.vercel.app"
+   "logo_note": "BLM droplet+flame logo",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/blm-plumbing-and-heating/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/blm-plumbing-and-heating/ad.png"
   },
   {
    "slug": "ks-computer-services",
    "business": "KS Computer Services",
    "contact": "Kev Shaw",
    "phone": "07814 539969",
-   "email": "",
+   "landline": "01723 639732",
+   "email": "kevshawtech@sky.com",
    "category": "computer repair",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#fce412",
+    "#7c732b",
+    "#bbae24",
+    "#36301c"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/ks-computer-services.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://ks-computer-services.vercel.app"
+   "logo_note": "yellow ad, header wordmark",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ks-computer-services/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ks-computer-services/ad.png"
   },
   {
    "slug": "fresh-look-services",
    "business": "Fresh Look Services",
    "contact": "Steve",
    "phone": "07746 041608",
+   "landline": "",
    "email": "",
    "category": "roofing/building",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#b9ac9b",
+    "#4c3b16",
+    "#645a4a",
+    "#2f271d"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/fresh-look-services.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://fresh-look-services.vercel.app"
+   "logo_note": "header wordmark",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/fresh-look-services/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/fresh-look-services/ad.png"
   },
   {
    "slug": "ds-k9-dog-training",
    "business": "DS K9 Dog Training",
    "contact": "",
    "phone": "07970 700348",
+   "landline": "",
    "email": "",
    "category": "dog training",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#000000",
+    "#866c4a",
+    "#533f2a",
+    "#cbad7e"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/ds-k9-dog-training.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://ds-k9-dog-training.vercel.app"
+   "logo_note": "gold DS K9 letters",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ds-k9-dog-training/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ds-k9-dog-training/ad.png"
   },
   {
    "slug": "eastfield-cars",
    "business": "Eastfield Cars",
    "contact": "",
    "phone": "07835 917052",
+   "landline": "",
    "email": "",
    "category": "taxi",
    "town": "Eastfield Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#231f20",
+    "#beb083",
+    "#5b6970",
+    "#f5e9c2"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/eastfield-cars.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://eastfield-cars.vercel.app"
+   "logo_note": "gold frame + steering wheel icon",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/eastfield-cars/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/eastfield-cars/ad.png"
   },
   {
    "slug": "a2b-removals-and-storage",
    "business": "A2B Removals & Storage",
    "contact": "",
    "phone": "07738 867062",
+   "landline": "01723 350661",
    "email": "",
    "category": "removals",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#27406c",
+    "#bf2d36",
+    "#7886a0",
+    "#e0dddf"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/a2b-removals-and-storage.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://a2b-removals-and-storage.vercel.app"
+   "logo_note": "A2B red/blue logo block",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/a2b-removals-and-storage/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/a2b-removals-and-storage/ad.png"
   },
   {
    "slug": "r-j-valeting",
    "business": "R.J. Valeting",
    "contact": "Richard J. Warters",
    "phone": "07837 713175",
-   "email": "",
+   "landline": "",
+   "email": "richard.warters@btinternet.com",
    "category": "car valeting",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#cf242a",
+    "#100808",
+    "#808c93",
+    "#d3d2ce"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/r-j-valeting.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://r-j-valeting.vercel.app"
+   "logo_note": "italic title over car photo",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-j-valeting/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-j-valeting/ad.png"
   },
   {
    "slug": "able-roofing",
    "business": "Able Roofing",
    "contact": "Steve",
    "phone": "07852 956164",
+   "landline": "01723 341302",
    "email": "",
    "category": "roofing",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#ee028b",
+    "#a87f84",
+    "#dfccaf",
+    "#fdf68e"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/able-roofing.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://able-roofing.vercel.app"
+   "logo_note": "white on pink roof-shape wordmark",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/able-roofing/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/able-roofing/ad.png"
   },
   {
-   "slug": "johnson-s-chimney-sweep",
+   "slug": "johnsons-chimney-sweep",
    "business": "Johnson's Chimney Sweep",
    "contact": "",
    "phone": "07581 360972",
+   "landline": "01723 371166",
    "email": "",
    "category": "chimney sweep",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#fff004",
+    "#241f1a",
+    "#b3a91f",
+    "#6e661b"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/johnson-s-chimney-sweep.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://johnson-s-chimney-sweep.vercel.app"
+   "logo_note": "vintage lettering on yellow",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/johnsons-chimney-sweep/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/johnsons-chimney-sweep/ad.png"
   },
   {
    "slug": "pro-grp-roofing",
    "business": "PRO GRP Roofing",
    "contact": "",
    "phone": "07515 653411",
+   "landline": "",
    "email": "",
    "category": "roofing",
    "town": "Scarborough/Bridlington",
    "county": "North Yorkshire",
-   "palette": [],
-   "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/pro-grp-roofing.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://pro-grp-roofing.vercel.app"
+   "palette": [
+    "#6f7679",
+    "#ef1822",
+    "#edeadc",
+    "#d18673"
+   ],
+   "ad_text": "PROGRP Walasnul: CONSERVATORY INSULATED ROOF SPECIALISTS FIBREGLASS FLAT ROOFS eaneeaeer REPATS&x MOSS/REMOVAL IS YOUR CONSERVATORY TOO HOT OR COLD? OR IS IT NOISY IN THE RAIN? USE YOUR CONSERVATORY ALL YEAR ROUND - CALL US FOR THE IDEAL SOLUTION! YOUR LOCAL CONSERVATORY INSULATED FIBREGLASS SPECIALISTS! 40 YEARS\u2019 EXPERIENCE * WE BEAT ALL QUOTES! CALL US TODAY ON 07515 653411 PROUD TO SUPPORT \u00a9 PENGUINS OF BRIDLINGTON",
+   "logo_note": "full-page ad; white rounded PRO GRP ROOFING box",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/pro-grp-roofing/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/pro-grp-roofing/ad.png"
   },
   {
    "slug": "first-call-grp-roofing",
    "business": "First Call GRP Roofing",
    "contact": "Martin",
    "phone": "07891 859537",
+   "landline": "",
    "email": "",
    "category": "roofing",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#353535",
+    "#292728",
+    "#bcc0c3",
+    "#6a6261"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/first-call-grp-roofing.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://first-call-grp-roofing.vercel.app"
+   "logo_note": "FIRST CALL red + GRP ROOFING white on dark",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/first-call-grp-roofing/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/first-call-grp-roofing/ad.png"
   },
   {
    "slug": "jh-plastering",
    "business": "JH Plastering",
    "contact": "Jamie Heritage",
    "phone": "07518 597022",
-   "email": "",
+   "landline": "",
+   "email": "jamieh1985@icloud.com",
    "category": "plastering",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#231f20",
+    "#8a898a",
+    "#dadada",
+    "#454343"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/jh-plastering.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://jh-plastering.vercel.app"
+   "logo_note": "JH monogram + Plastering",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jh-plastering/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jh-plastering/ad.png"
   },
   {
    "slug": "millward-taylor-carpentry-and-joinery",
    "business": "Millward Taylor Carpentry & Joinery",
    "contact": "Millward Taylor",
    "phone": "07818 591019",
-   "email": "",
+   "landline": "",
+   "email": "rd.millwardtaylor@gmail.com",
    "category": "joinery",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#5e5852",
+    "#87847f",
+    "#d5d4cd",
+    "#241f20"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/millward-taylor-carpentry-and-joinery.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://millward-taylor-carpentry-and-joinery.vercel.app"
+   "logo_note": "emblem + cream Carpentry and Joinery",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/millward-taylor-carpentry-and-joinery/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/millward-taylor-carpentry-and-joinery/ad.png"
   },
   {
    "slug": "east-coast-roofing-and-sons",
    "business": "East Coast Roofing & Sons",
    "contact": "",
    "phone": "07706 411088",
-   "email": "",
+   "landline": "01723 239512",
+   "email": "ecrandsons@yahoo.com",
    "category": "roofing",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#23376c",
+    "#d0c1b6",
+    "#46526a",
+    "#ababaa"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/east-coast-roofing-and-sons.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://east-coast-roofing-and-sons.vercel.app"
+   "logo_note": "blue roofs logo",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/east-coast-roofing-and-sons/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/east-coast-roofing-and-sons/ad.png"
+  },
+  {
+   "slug": "stuart-moore-foot-health-practitioner",
+   "business": "Stuart Moore Foot Health Practitioner",
+   "contact": "Stuart Moore",
+   "phone": "07855 190082",
+   "landline": "01723 374668",
+   "email": "",
+   "category": "foot care",
+   "town": "Scarborough/Ryedale",
+   "county": "North Yorkshire",
+   "palette": [
+    "#d3eada",
+    "#676a58",
+    "#bcc5b3",
+    "#e4f2e8"
+   ],
+   "ad_text": "",
+   "logo_note": "blue italic name text-logo",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/stuart-moore-foot-health-practitioner/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/stuart-moore-foot-health-practitioner/ad.png"
   }
  ]
 }

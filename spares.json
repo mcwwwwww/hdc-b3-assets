@@ -1,0 +1,64 @@
+[
+ {
+  "slug": "wheeldons-design-and-build",
+  "business": "Wheeldon's Design & Build",
+  "contact": "",
+  "phone": "07940 327070",
+  "landline": "",
+  "email": "",
+  "category": "bathrooms/kitchens",
+  "town": "Scarborough",
+  "county": "North Yorkshire",
+  "palette": [
+   "#081e35",
+   "#988a72",
+   "#494f4e",
+   "#796e5a"
+  ],
+  "ad_text": "",
+  "logo_note": "gold/white serif on navy",
+  "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/wheeldons-design-and-build/logo.datauri.txt",
+  "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/wheeldons-design-and-build/ad.png"
+ },
+ {
+  "slug": "r-milner-roofing-and-building-contractors",
+  "business": "R Milner Roofing & Building Contractors",
+  "contact": "R Milner",
+  "phone": "07811 365196",
+  "landline": "01723 859979",
+  "email": "",
+  "category": "roofing",
+  "town": "Scarborough",
+  "county": "North Yorkshire",
+  "palette": [
+   "#406ab4",
+   "#e2e2ea",
+   "#c7cad0",
+   "#97a9c1"
+  ],
+  "ad_text": "",
+  "logo_note": "white title on blue",
+  "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-milner-roofing-and-building-contractors/logo.datauri.txt",
+  "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-milner-roofing-and-building-contractors/ad.png"
+ },
+ {
+  "slug": "zachary-hardgrave-plastering-and-rendering",
+  "business": "Zachary Hardgrave Plastering & Rendering",
+  "contact": "Zachary Hardgrave",
+  "phone": "07534 312356",
+  "landline": "",
+  "email": "",
+  "category": "plastering",
+  "town": "Scarborough",
+  "county": "North Yorkshire",
+  "palette": [
+   "#515256",
+   "#818081",
+   "#cfd2d3"
+  ],
+  "ad_text": "",
+  "logo_note": "plasterer figure + name",
+  "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/zachary-hardgrave-plastering-and-rendering/logo.datauri.txt",
+  "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/zachary-hardgrave-plastering-and-rendering/ad.png"
+ }
+]

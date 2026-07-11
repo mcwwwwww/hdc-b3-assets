@@ -1,306 +1,436 @@
 {
- "batch": "batch3.5",
- "instructions": "For EACH lead in the leads array, build a one-page, mobile-responsive WEBSITE as a SINGLE self-contained HTML file named <slug>.html (all CSS/JS inline, no external assets except the Formspree POST). If a palette array is given, use those hex colours. If you cannot view the image, design tastefully from the structured fields; never invent facts.\nSTRUCTURE per site:\n1. Hero \u2014 business name as a styled text wordmark, short punchy tagline, phone number as a large tap-to-call button (href=\"tel:+44...\" )\n2. Services \u2014 inferred ONLY from category + ad_text, as tidy cards/list\n3. Why choose us \u2014 3 short trust points drawn from the details given (local, friendly, free quotes etc.)\n4. Contact \u2014 an enquiry form (name, phone, message) that POSTs to https://formspree.io/f/mpqgeoaj with a hidden input name=\"_subject\" value=\"<business> enquiry\" (it must actually submit \u2014 not decorative or mailto-only), plus the tap-to-call phone link\nTECHNICAL (every site):\n- Mobile-first; correct down to 360px wide, no horizontal scroll.\n- <title>\"<business> | <short service> \u2014 <town>, <county>\"; meta description ~150 chars; viewport meta.\n- Open Graph (og:type=website, og:title, og:description, og:site_name, og:locale=en_GB), Twitter summary card, <link rel=\"canonical\" href=\"<vercel_url>/\">.\n- Use ONLY facts provided \u2014 do not invent services, prices, reviews, certifications, awards or years in business.\n- Tone: friendly, local, trustworthy. UK English. Tight copy \u2014 small local business, not a corporation.\n- Footer: \"<business> \u2014 serving <town> & surrounding areas. <phone>\"\nDELIVERY: when all 20 sites are done, package the 20 HTML files into a zip named <batch>-sites.zip.\nPREFERRED: upload the zip with: curl -F \"reqtype=fileupload\" -F \"time=72h\" -F \"fileToUpload=@<batch>-sites.zip\" https://litterbox.catbox.moe/resources/internals/api.php  \u2014 then reply with the returned URL.\nIF you cannot make network requests from your environment: provide the zip (or each HTML file) as downloadable output named <batch>-sites.zip instead, and say so. IMPORTANT: ignore image_url fields entirely \u2014 do not fetch them; design from palette + ad_text. ad_text is raw OCR and may contain typos: use it to identify services only, never copy garbled text verbatim. If an email looks inconsistent with the business name, omit it.",
+ "batch": "3.5",
+ "formspree": "https://formspree.io/f/mpqgeoaj",
+ "instructions": {
+  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England.",
+  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; }. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
+  "design": "Design each site from its palette[] colours and ad_text. Use palette[0] as the primary brand colour. Clean, modern, mobile-first, professional. Sections: hero (logo, business name, one-line pitch, phone call-to-action button with tel: link), services (from ad_text), why-choose-us / trust points (experience, insured, free quotes \u2014 only claims present in ad_text), service area (town + surrounding area), contact section.",
+  "contact_form": "Every site gets a contact form posting to https://formspree.io/f/mpqgeoaj with method POST, fields: name, phone, message, and a hidden input name='_subject' value='<business> enquiry'. Also show the business phone number prominently with a tel: link.",
+  "phone_rule": "Use the exact phone (and landline if present) given in this manifest. Never invent phone numbers, emails, addresses, prices, or reviews.",
+  "email_rule": "Only show an email address if the manifest email field is non-empty; use it exactly as written.",
+  "footer": "Small footer: '<business> \u2014 <town>, <county>'. No fake copyright years, no invented company registration numbers.",
+  "seo": "Each page: <title><business> | <category> in <town></title> and a meta description using the ad_text.",
+  "deliverable": "Zip all 20 files as batch3.N-sites.zip (N = this manifest's number) and provide a download link or upload URL (litterbox.catbox.moe 72h, or any fetchable URL)."
+ },
  "leads": [
-  {
-   "slug": "binks-roofing",
-   "business": "Binks Roofing",
-   "contact": "",
-   "phone": "07715 335072",
-   "email": "",
-   "category": "roofing",
-   "town": "Scarborough",
-   "county": "North Yorkshire",
-   "palette": [],
-   "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/binks-roofing.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://binks-roofing.vercel.app"
-  },
   {
    "slug": "bgm-building-and-roofing-contractors",
    "business": "BGM Building & Roofing Contractors",
    "contact": "",
    "phone": "07786 826506",
-   "email": "",
+   "landline": "01723 370279",
+   "email": "bgm.vasey@gmail.com",
    "category": "building/roofing",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#231f20",
+    "#626360",
+    "#b0a6a4",
+    "#d1d6da"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/bgm-building-and-roofing-contractors.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://bgm-building-and-roofing-contractors.vercel.app"
+   "logo_note": "orange/grey roof graphic + title",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/bgm-building-and-roofing-contractors/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/bgm-building-and-roofing-contractors/ad.png"
   },
   {
    "slug": "dph-painting-and-decorating",
    "business": "DPH Painting & Decorating",
    "contact": "",
    "phone": "07730 022803",
-   "email": "",
+   "landline": "",
+   "email": "dphpainting19@gmail.com",
    "category": "decorating",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#131a21",
+    "#06070c",
+    "#2163af",
+    "#b9c6d2"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/dph-painting-and-decorating.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://dph-painting-and-decorating.vercel.app"
+   "logo_note": "DPH app-icon square logo",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/dph-painting-and-decorating/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/dph-painting-and-decorating/ad.png"
   },
   {
    "slug": "paul-simpson-painter-and-decorator",
    "business": "Paul Simpson Painter & Decorator",
    "contact": "Paul Simpson",
    "phone": "07825 368598",
-   "email": "",
+   "landline": "01723 867845",
+   "email": "pa-simpson@hotmail.co.uk",
    "category": "decorating",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#c4bbda",
+    "#4f5478",
+    "#4dbcc7",
+    "#a4b1ce"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/paul-simpson-painter-and-decorator.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://paul-simpson-painter-and-decorator.vercel.app"
+   "logo_note": "blue names on lilac",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-simpson-painter-and-decorator/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-simpson-painter-and-decorator/ad.png"
   },
   {
-   "slug": "ian-s-building-services",
+   "slug": "ians-building-services",
    "business": "Ian's Building Services",
    "contact": "Ian",
    "phone": "07805 001274",
+   "landline": "",
    "email": "",
    "category": "building",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#eed8b3",
+    "#c5b9a0",
+    "#322d2b",
+    "#968d7b"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/ian-s-building-services.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://ian-s-building-services.vercel.app"
+   "logo_note": "black title on tan doodle bg",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ians-building-services/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ians-building-services/ad.png"
   },
   {
    "slug": "polished-living-home-cleaning",
    "business": "Polished Living Home Cleaning",
    "contact": "Michaela",
    "phone": "07307 046694",
+   "landline": "01723 512952",
    "email": "",
    "category": "cleaning",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#e6d1ba",
+    "#665857",
+    "#dcc1a7",
+    "#b79c86"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/polished-living-home-cleaning.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://polished-living-home-cleaning.vercel.app"
+   "logo_note": "bronze house logo",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/polished-living-home-cleaning/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/polished-living-home-cleaning/ad.png"
   },
   {
    "slug": "john-wood-heating-and-renewables",
    "business": "John Wood Heating & Renewables",
    "contact": "John Wood",
    "phone": "07890 176855",
-   "email": "",
+   "landline": "",
+   "email": "johnwoodrenewables@gmail.com",
    "category": "heating/renewables",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#1d2c44",
+    "#25988f",
+    "#bbd5cc",
+    "#739c8a"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/john-wood-heating-and-renewables.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://john-wood-heating-and-renewables.vercel.app"
+   "logo_note": "leaf wordmark Est 2008",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/john-wood-heating-and-renewables/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/john-wood-heating-and-renewables/ad.png"
   },
   {
    "slug": "des-electrical",
    "business": "DES Electrical",
    "contact": "Shaun O'Donnell",
    "phone": "07594 646552",
+   "landline": "01723 378503",
    "email": "",
    "category": "electrician",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#e4e891",
+    "#928e7d",
+    "#f3f4d8"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/des-electrical.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://des-electrical.vercel.app"
+   "logo_note": "D.E.S brush logo",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/des-electrical/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/des-electrical/ad.png"
   },
   {
    "slug": "whiterose-decorators",
    "business": "Whiterose Decorators",
    "contact": "",
    "phone": "07729 967148",
+   "landline": "",
    "email": "",
    "category": "decorating",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#2f3b6c",
+    "#d5d5e6",
+    "#7381a7",
+    "#a6abc1"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/whiterose-decorators.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://whiterose-decorators.vercel.app"
+   "logo_note": "script + rose watermark",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/whiterose-decorators/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/whiterose-decorators/ad.png"
   },
   {
    "slug": "colin-scales-carpet-fitter",
    "business": "Colin Scales Carpet Fitter",
    "contact": "Colin Scales",
    "phone": "07526 673104",
+   "landline": "",
    "email": "",
    "category": "carpet fitting",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#877c72",
+    "#f4f1ed",
+    "#421416",
+    "#65534f"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/colin-scales-carpet-fitter.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://colin-scales-carpet-fitter.vercel.app"
+   "logo_note": "red rug motif + name",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/colin-scales-carpet-fitter/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/colin-scales-carpet-fitter/ad.png"
   },
   {
    "slug": "lockexpress-locksmiths",
    "business": "Lockexpress Locksmiths",
    "contact": "",
    "phone": "07711 504630",
+   "landline": "01377 257572",
    "email": "",
    "category": "locksmith/car keys",
    "town": "Scarborough/Driffield",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#5b5c67",
+    "#afa6a6",
+    "#c6c1c0",
+    "#2c3865"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/lockexpress-locksmiths.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://lockexpress-locksmiths.vercel.app"
+   "logo_note": "CAR KEY & REMOTE SPECIALIST title, Lockexpress red",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lockexpress-locksmiths/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lockexpress-locksmiths/ad.png"
   },
   {
    "slug": "gary-oseland-plumbing-and-heating",
    "business": "Gary Oseland Plumbing and Heating",
    "contact": "Gary Oseland",
    "phone": "07885 282597",
+   "landline": "01723 870944",
    "email": "",
    "category": "plumbing",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#524b48",
+    "#babcba",
+    "#898988",
+    "#bf9983"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/gary-oseland-plumbing-and-heating.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://gary-oseland-plumbing-and-heating.vercel.app"
+   "logo_note": "handwritten name logo",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/gary-oseland-plumbing-and-heating/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/gary-oseland-plumbing-and-heating/ad.png"
   },
   {
-   "slug": "luke-s-handyman-services",
+   "slug": "lukes-handyman-services",
    "business": "Luke's Handyman Services",
    "contact": "Luke",
    "phone": "07488 286897",
+   "landline": "",
    "email": "",
    "category": "handyman",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#3b2e22",
+    "#654a33",
+    "#4e3e2d",
+    "#968567"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/luke-s-handyman-services.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://luke-s-handyman-services.vercel.app"
+   "logo_note": "hammer icon + yellow banner",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lukes-handyman-services/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lukes-handyman-services/ad.png"
   },
   {
    "slug": "elect-rick-installation-and-testing",
    "business": "Elect-Rick Installation and Testing",
    "contact": "Rick",
    "phone": "07905 330810",
-   "email": "",
+   "landline": "",
+   "email": "elect-rick@hotmail.com",
    "category": "electrician",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#d2252b",
+    "#7b5672",
+    "#e3a2a6",
+    "#8191a2"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/elect-rick-installation-and-testing.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://elect-rick-installation-and-testing.vercel.app"
+   "logo_note": "blue/red wordmark",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/elect-rick-installation-and-testing/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/elect-rick-installation-and-testing/ad.png"
   },
   {
    "slug": "rob-the-van-man-waste-management",
    "business": "Rob the Van Man Waste Management",
    "contact": "Rob",
    "phone": "07866 627253",
+   "landline": "",
    "email": "",
    "category": "waste clearance",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#2596ba",
+    "#98b9c4",
+    "#3c3b3d",
+    "#d5e5e9"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/rob-the-van-man-waste-management.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://rob-the-van-man-waste-management.vercel.app"
+   "logo_note": "teal title band; van graphic above",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/rob-the-van-man-waste-management/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/rob-the-van-man-waste-management/ad.png"
   },
   {
    "slug": "seaden-homes-handyman",
    "business": "Seaden Homes Handyman",
    "contact": "Sean",
    "phone": "07504 515967",
-   "email": "",
+   "landline": "",
+   "email": "sean@seadenhomes.com",
    "category": "handyman",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#1d7abb",
+    "#bbbfc8",
+    "#1a161a",
+    "#818288"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/seaden-homes-handyman.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://seaden-homes-handyman.vercel.app"
+   "logo_note": "black circle house logo; domain dead - ok",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/seaden-homes-handyman/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/seaden-homes-handyman/ad.png"
   },
   {
    "slug": "m-and-s-bespoke-joinery",
    "business": "M&S Bespoke Joinery",
    "contact": "",
    "phone": "07771 821813",
+   "landline": "01723 361915",
    "email": "",
    "category": "joinery",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#ede82a",
+    "#000000",
+    "#28231e",
+    "#77732a"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/m-and-s-bespoke-joinery.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://m-and-s-bespoke-joinery.vercel.app"
+   "logo_note": "M&S hammers roundel",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/m-and-s-bespoke-joinery/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/m-and-s-bespoke-joinery/ad.png"
   },
   {
    "slug": "nick-turner-joinery",
    "business": "Nick Turner Joinery",
    "contact": "Nick Turner",
    "phone": "07455 023655",
-   "email": "",
+   "landline": "",
+   "email": "turnerjoinery88@gmail.com",
    "category": "joinery",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#e3e2e8",
+    "#a59689",
+    "#727077",
+    "#333555"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/nick-turner-joinery.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://nick-turner-joinery.vercel.app"
+   "logo_note": "navy title + tools bg",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/nick-turner-joinery/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/nick-turner-joinery/ad.png"
   },
   {
    "slug": "r-smith-electrical",
    "business": "R Smith Electrical",
    "contact": "R Smith",
    "phone": "07411 530435",
-   "email": "",
+   "landline": "",
+   "email": "rselectrical82@gmail.com",
    "category": "electrician",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#000000",
+    "#8dc958",
+    "#424638",
+    "#617152"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/r-smith-electrical.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://r-smith-electrical.vercel.app"
+   "logo_note": "lightning icon + green wordmark",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-smith-electrical/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-smith-electrical/ad.png"
   },
   {
    "slug": "s-and-d-east-coast-decorators",
    "business": "S&D East Coast Decorators",
    "contact": "Steven Maltas",
    "phone": "07597 237220",
-   "email": "",
+   "landline": "",
+   "email": "ste303maltas@gmail.com",
    "category": "decorating",
    "town": "Scarborough",
    "county": "North Yorkshire",
-   "palette": [],
+   "palette": [
+    "#384a4d",
+    "#57867b",
+    "#b3bebb",
+    "#e9edec"
+   ],
    "ad_text": "",
-   "image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/assets/s-and-d-east-coast-decorators.png",
-   "image_note": "full magazine page \u2014 locate the advert for THIS business on it; ignore all other adverts",
-   "vercel_url": "https://s-and-d-east-coast-decorators.vercel.app"
+   "logo_note": "serif title on sage",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/s-and-d-east-coast-decorators/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/s-and-d-east-coast-decorators/ad.png"
+  },
+  {
+   "slug": "trifecta-scaffolding",
+   "business": "Trifecta Scaffolding",
+   "contact": "",
+   "phone": "07514 758202",
+   "landline": "",
+   "email": "",
+   "category": "scaffolding",
+   "town": "Scarborough",
+   "county": "North Yorkshire",
+   "palette": [
+    "#63bd63",
+    "#d8e4e3",
+    "#723c92",
+    "#4b464e"
+   ],
+   "ad_text": "",
+   "logo_note": "green oval emblem",
+   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/trifecta-scaffolding/logo.datauri.txt",
+   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/trifecta-scaffolding/ad.png"
   }
  ]
 }
