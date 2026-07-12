@@ -2,9 +2,13 @@
  "batch": "3.5",
  "formspree": "https://formspree.io/f/mpqgeoaj",
  "instructions": {
-  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England.",
-  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; }. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
-  "design": "Design each site from its palette[] colours and ad_text. Use palette[0] as the primary brand colour. Clean, modern, mobile-first, professional. Sections: hero (logo, business name, one-line pitch, phone call-to-action button with tel: link), services (from ad_text), why-choose-us / trust points (experience, insured, free quotes \u2014 only claims present in ad_text), service area (town + surrounding area), contact section.",
+  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England \u2014 they must impress the owner enough to buy.",
+  "quality_bar_CRITICAL": "These pages are sold to the business owners, so they must look like a professional agency built them \u2014 NOT like a template. Spend equal, full effort on every one of the 20 sites, including the last ones. A flat page of centred text blocks is a failure. Every site needs: a designed hero with visual depth (layered gradients from the palette, a large CSS/SVG decorative motif drawn from the trade \u2014 e.g. a roofline silhouette for a roofer, leaf shapes for a gardener, tile grid for a tiler), distinct section backgrounds that alternate rhythm, cards or split layouts for services (not plain bullet lists), generous whitespace, a sticky header with the business name and a call button, large expressive typography (use system font stacks with strong weights/sizes \u2014 e.g. 900-weight condensed-feel headings via font-stretch/letter-spacing), hover states, subtle scroll animations (CSS only, respect prefers-reduced-motion), and a strong footer CTA band.",
+  "variety_rule": "The 20 sites must NOT share one layout. Vary hero composition (split hero / full-bleed gradient / diagonal section breaks / boxed card hero), section order, and graphic motifs so each looks individually designed for that trade. Two sites in the same trade must still look clearly different.",
+  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; border-radius: 8px; }. If the logo has a solid background colour that clashes with the hero, put it on a white/light card with padding. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
+  "content": "Each lead now includes ad_text (verbatim transcription of their printed magazine advert), services[], tagline, and trust_points[] \u2014 all taken from the real ad. Build the services section from services[] (one card each, with a short benefit-focused sentence you write for that trade). Use tagline in the hero if present. Use trust_points for a why-choose-us strip. You may write natural marketing copy around these facts (local, friendly, reliable framing) but never invent specific claims: no made-up years of experience, prices, reviews, certifications, or guarantees that are not in trust_points/ad_text.",
+  "design": "palette[] is extracted from the business's LOGO. The site's colours MUST visibly match the logo: palette[0] (or the most saturated palette colour) is the primary brand colour for the header, buttons and section accents; the others are supporting tones; derive light/dark tints for backgrounds. A visitor must never see a logo whose colours clash with the page around it. Mobile-first, fast, accessible (contrast AA, focus states). Sections: hero (logo, business name, tagline/one-line pitch, phone CTA with tel: link), services, why-choose-us / trust points, service area (town + surrounding area, name nearby towns), contact.",
+  "trade_photo": "If the lead has a photo_datauri (or photo_datauri_url), it is a professional 16:9 photo of this trade. Use it large \u2014 as the hero background (with a palette-tinted overlay for text contrast) or as a split-hero / section image. Every site with a photo must actually display it.",
   "contact_form": "Every site gets a contact form posting to https://formspree.io/f/mpqgeoaj with method POST, fields: name, phone, message, and a hidden input name='_subject' value='<business> enquiry'. Also show the business phone number prominently with a tel: link.",
   "phone_rule": "Use the exact phone (and landline if present) given in this manifest. Never invent phone numbers, emails, addresses, prices, or reviews.",
   "email_rule": "Only show an email address if the manifest email field is non-empty; use it exactly as written.",
@@ -25,13 +29,31 @@
    "county": "North Yorkshire",
    "palette": [
     "#231f20",
-    "#626360",
-    "#b0a6a4",
-    "#d1d6da"
+    "#8a8d93",
+    "#f1f0f0",
+    "#393739"
    ],
-   "ad_text": "",
+   "ad_text": "BGM BUILDING & ROOFING CONTRACTORS\nProfessional and reliable\nAll work guaranteed\nGENERAL BUILDING\nRENOVATIONS\nEXTENSIONS\nLOFT CONVERSIONS\nROOFING\nNEW ROOFS\nFLAT ROOFS\nROOF REPAIRS\nDRIVEWAYS\nGROUNDWORKS\nPATIOS\n01723 370279\n07786 826506\nBGM.VASEY@GMAIL.COM\nPLEASE CALL FOR A FREE QUOTE",
+   "services": [
+    "GENERAL BUILDING",
+    "RENOVATIONS",
+    "EXTENSIONS",
+    "LOFT CONVERSIONS",
+    "ROOFING",
+    "NEW ROOFS",
+    "FLAT ROOFS",
+    "ROOF REPAIRS",
+    "DRIVEWAYS",
+    "GROUNDWORKS",
+    "PATIOS"
+   ],
+   "tagline": "Professional and reliable",
+   "trust_points": [
+    "All work guaranteed"
+   ],
    "logo_note": "orange/grey roof graphic + title",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/bgm-building-and-roofing-contractors/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/bgm-building-and-roofing-contractors/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/bgm-building-and-roofing-contractors/ad.png"
   },
   {
@@ -45,14 +67,27 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#131a21",
-    "#06070c",
-    "#2163af",
-    "#b9c6d2"
+    "#1f66b2",
+    "#02010f",
+    "#e8f5f6",
+    "#459ec2"
    ],
-   "ad_text": "",
+   "ad_text": "DPH Painting & Decorating\nTrusted Local Painter & Decorator\nOver twenty years of trusted painting and decorating\nInterior & Exterior Painting\nWallpapering\nFeature Walls\nDomestic & Commercial Work\nWoodwork & Doors\nFull Property Refresh\nFREE NO-OBLIGATION QUOTES\nT: 07730 022803\nE: dphpainting19@gmail.com",
+   "services": [
+    "Interior & Exterior Painting",
+    "Wallpapering",
+    "Feature Walls",
+    "Domestic & Commercial Work",
+    "Woodwork & Doors",
+    "Full Property Refresh"
+   ],
+   "tagline": "Trusted Local Painter & Decorator",
+   "trust_points": [
+    "Over twenty years of trusted painting and decorating"
+   ],
    "logo_note": "DPH app-icon square logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/dph-painting-and-decorating/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/dph-painting-and-decorating/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/dph-painting-and-decorating/ad.png"
   },
   {
@@ -67,13 +102,21 @@
    "county": "North Yorkshire",
    "palette": [
     "#c4bbda",
-    "#4f5478",
-    "#4dbcc7",
-    "#a4b1ce"
+    "#304186",
+    "#eae7f6",
+    "#acabd0"
    ],
-   "ad_text": "",
+   "ad_text": "Paul Simpson\nPainter & Decorator\nInterior & Exterior Decorating\nT: 01723 867845\n07825 368598\npa-simpson@hotmail.co.uk",
+   "services": [
+    "Painter & Decorator",
+    "Interior Decorating",
+    "Exterior Decorating"
+   ],
+   "tagline": "Interior & Exterior Decorating",
+   "trust_points": [],
    "logo_note": "blue names on lilac",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-simpson-painter-and-decorator/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-simpson-painter-and-decorator/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-simpson-painter-and-decorator/ad.png"
   },
   {
@@ -88,13 +131,24 @@
    "county": "North Yorkshire",
    "palette": [
     "#eed8b3",
-    "#c5b9a0",
-    "#322d2b",
-    "#968d7b"
+    "#252122",
+    "#b09f86"
    ],
-   "ad_text": "",
+   "ad_text": "IAN's BUILDING SERVICES\nLandscaping \u2022 Damp Proofing\nRoof Repairs\nGENERAL PROPERTY REPAIRS INCLUDING HOUSE POINTING\n30 YEARS' EXPERIENCE\n07805 001274\nRING FOR A FREE QUOTE",
+   "services": [
+    "Landscaping",
+    "Damp Proofing",
+    "Roof Repairs",
+    "General Property Repairs",
+    "House Pointing"
+   ],
+   "tagline": "RING FOR A FREE QUOTE",
+   "trust_points": [
+    "30 YEARS' EXPERIENCE"
+   ],
    "logo_note": "black title on tan doodle bg",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ians-building-services/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ians-building-services/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ians-building-services/ad.png"
   },
   {
@@ -108,14 +162,24 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#e6d1ba",
-    "#665857",
-    "#dcc1a7",
-    "#b79c86"
+    "#9d7b67",
+    "#bfa38c",
+    "#e0cbb5",
+    "#aa8b75"
    ],
-   "ad_text": "",
+   "ad_text": "Polished Living\nHome Cleaning Business\nWeekly, Fortnightly, Monthly Cleans\n\u2022 Home Cleaning\n\u2022 Office Cleaning\n\u2022 Deep Cleans\n\u2022 Holiday Homes\nCall Michaela on: 07307 046694 | 01723 512952",
+   "services": [
+    "Weekly, Fortnightly, Monthly Cleans",
+    "Home Cleaning",
+    "Office Cleaning",
+    "Deep Cleans",
+    "Holiday Homes"
+   ],
+   "tagline": null,
+   "trust_points": [],
    "logo_note": "bronze house logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/polished-living-home-cleaning/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/polished-living-home-cleaning/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/polished-living-home-cleaning/ad.png"
   },
   {
@@ -129,14 +193,27 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#1d2c44",
-    "#25988f",
-    "#bbd5cc",
-    "#739c8a"
+    "#3fba9e",
+    "#397c9c",
+    "#8fc8af",
+    "#a9dbbd"
    ],
-   "ad_text": "",
+   "ad_text": "JOHN WOOD HEATING & RENEWABLES\nEst 2008\n\u00a39,000 BUS GRANT if you're on LPG or Oil\n\u00a37,500 BUS GRANT if you're on Gas\nUPGRADE to a Vaillant Air Source Heat Pump\nSUBJECT TO a Heat Loss Survey & Report\nLOWER BILLS Reduce your energy costs and carbon footprint\nVaillant aroTHERM plus\nbetter for tomorrow.\nTRUSTED. LOCAL. CERTIFIED.\nMCS CERTIFIED\nWhich? Trusted Trader\n\u00a39,000 grant available for gas and LPG homeowners - limited time government offer.\n07890 176855\njohnwoodrenewables@gmail.com",
+   "services": [
+    "Heating & Renewables",
+    "Air Source Heat Pump Installation",
+    "Heat Loss Survey & Report"
+   ],
+   "tagline": "better for tomorrow.",
+   "trust_points": [
+    "Est 2008",
+    "TRUSTED. LOCAL. CERTIFIED.",
+    "MCS CERTIFIED",
+    "Which? Trusted Trader"
+   ],
    "logo_note": "leaf wordmark Est 2008",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/john-wood-heating-and-renewables/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/john-wood-heating-and-renewables/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/john-wood-heating-and-renewables/ad.png"
   },
   {
@@ -150,13 +227,23 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#e4e891",
-    "#928e7d",
-    "#f3f4d8"
+    "#2d3541",
+    "#adb28e",
+    "#faf9f1",
+    "#edc2b9"
    ],
-   "ad_text": "",
+   "ad_text": "D.E.S ELECTRICAL\nShaun O'Donnell\nElectrician\n\u2022 24/7 Service \u2022 Free call-out\n\u2022 Free quotes\n07594 646552 \u2022 01723 378503\nFind us on facebook",
+   "services": [
+    "Electrician",
+    "24/7 Service",
+    "Free call-out",
+    "Free quotes"
+   ],
+   "tagline": null,
+   "trust_points": [],
    "logo_note": "D.E.S brush logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/des-electrical/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/des-electrical/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/des-electrical/ad.png"
   },
   {
@@ -170,14 +257,27 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#2f3b6c",
-    "#d5d5e6",
-    "#7381a7",
-    "#a6abc1"
+    "#d0d1e5",
+    "#17245b",
+    "#acb0c9",
+    "#e9eaf1"
    ],
-   "ad_text": "",
+   "ad_text": "Whiterose Decorators\nFrom a feature wall to a hand-painted kitchen - we've got it covered\nFully qualified & insured | 25 years' experience | Free quotes\nCity & Guilds\n07729 967148",
+   "services": [
+    "decorating",
+    "feature walls",
+    "hand-painted kitchens"
+   ],
+   "tagline": "From a feature wall to a hand-painted kitchen - we've got it covered",
+   "trust_points": [
+    "Fully qualified & insured",
+    "25 years' experience",
+    "Free quotes",
+    "City & Guilds"
+   ],
    "logo_note": "script + rose watermark",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/whiterose-decorators/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/whiterose-decorators/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/whiterose-decorators/ad.png"
   },
   {
@@ -191,14 +291,23 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#877c72",
-    "#f4f1ed",
-    "#421416",
-    "#65534f"
+    "#f2ece9",
+    "#341215",
+    "#805859",
+    "#e8dcdc"
    ],
-   "ad_text": "",
+   "ad_text": "COLIN SCALES\nCARPET FITTER\nHighly skilled with many years' experience\n\u2022 NO JOB TOO SMALL \u2022\n(Sorry, no vinyls)\nCall Colin: 07526 673104",
+   "services": [
+    "Carpet fitting"
+   ],
+   "tagline": "Highly skilled with many years' experience",
+   "trust_points": [
+    "Highly skilled",
+    "Many years' experience"
+   ],
    "logo_note": "red rug motif + name",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/colin-scales-carpet-fitter/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/colin-scales-carpet-fitter/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/colin-scales-carpet-fitter/ad.png"
   },
   {
@@ -212,14 +321,27 @@
    "town": "Scarborough/Driffield",
    "county": "North Yorkshire",
    "palette": [
-    "#5b5c67",
-    "#afa6a6",
-    "#c6c1c0",
-    "#2c3865"
+    "#969daa",
+    "#253f8e",
+    "#74676a",
+    "#cecdcf"
    ],
-   "ad_text": "",
+   "ad_text": "CAR KEY & REMOTE SPECIALIST\nCall Lockexpress on 07711 504630 or 01377 257572\nALL AREAS COVERED\nFor most makes of cars\nLockexpress Locksmiths\n\u2022 Lock replacement/repairs\n\u2022 Lockouts\n\u2022 Lock installation\n\u2022 UPVC locks\n07711 504630 / 01377 257572",
+   "services": [
+    "Car key & remote specialist",
+    "Lock replacement/repairs",
+    "Lockouts",
+    "Lock installation",
+    "UPVC locks"
+   ],
+   "tagline": "CAR KEY & REMOTE SPECIALIST",
+   "trust_points": [
+    "ALL AREAS COVERED",
+    "For most makes of cars"
+   ],
    "logo_note": "CAR KEY & REMOTE SPECIALIST title, Lockexpress red",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lockexpress-locksmiths/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lockexpress-locksmiths/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lockexpress-locksmiths/ad.png"
   },
   {
@@ -233,14 +355,31 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#524b48",
-    "#babcba",
-    "#898988",
-    "#bf9983"
+    "#0b0b0b",
+    "#3b3b3b",
+    "#818486",
+    "#cacbcb"
    ],
-   "ad_text": "",
+   "ad_text": "Gary Oseland Plumbing and Heating LTD\nEstablished for over 20 years\nBoiler installations, servicing and repairs\nCentral heating\nBathrooms and tiling\nTel: 01723 870944\nMob: 07885 282597\nAPHC Licensed Member\nGas Safe Register 109419",
+   "services": [
+    "Plumbing",
+    "Heating",
+    "Boiler installations",
+    "Boiler servicing",
+    "Boiler repairs",
+    "Central heating",
+    "Bathrooms",
+    "Tiling"
+   ],
+   "tagline": null,
+   "trust_points": [
+    "Established for over 20 years",
+    "APHC Licensed Member",
+    "Gas Safe Registered (109419)"
+   ],
    "logo_note": "handwritten name logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/gary-oseland-plumbing-and-heating/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/gary-oseland-plumbing-and-heating/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/gary-oseland-plumbing-and-heating/ad.png"
   },
   {
@@ -254,14 +393,24 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#3b2e22",
-    "#654a33",
-    "#4e3e2d",
-    "#968567"
+    "#43372d",
+    "#6f5b41",
+    "#b9aa26",
+    "#544838"
    ],
-   "ad_text": "",
+   "ad_text": "LUKE'S HANDYMAN SERVICES\nSERVICES\nGENERAL DIY\nGARDENING\nPAINTING\nMAN WITH A VAN\nODD JOBS\nTel. 07488 286897",
+   "services": [
+    "GENERAL DIY",
+    "GARDENING",
+    "PAINTING",
+    "MAN WITH A VAN",
+    "ODD JOBS"
+   ],
+   "tagline": null,
+   "trust_points": [],
    "logo_note": "hammer icon + yellow banner",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lukes-handyman-services/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lukes-handyman-services/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lukes-handyman-services/ad.png"
   },
   {
@@ -275,14 +424,31 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#d2252b",
-    "#7b5672",
-    "#e3a2a6",
-    "#8191a2"
+    "#1d3570",
+    "#afb4be",
+    "#5689aa",
+    "#3e4f79"
    ],
-   "ad_text": "",
+   "ad_text": "eElect-Rick Installation and Testing Ltd\nFor all electrical systems\nDomestic | Commercial | Industrial\nAll electrical installations from a single socket to complete rewires \u2022 PAT testing\nAll work fully insured and guaranteed \u2022 Free estimates\nMobile: 07905 330810 Email: elect-rick@hotmail.com\nPART P Electrical Safety\nTRUST MARK Government Endorsed Standards www.trustmark.org.uk\nNAPIT\nCity & Guilds Qualified",
+   "services": [
+    "Domestic electrical installations",
+    "Commercial electrical installations",
+    "Industrial electrical installations",
+    "Complete rewires",
+    "PAT testing"
+   ],
+   "tagline": "For all electrical systems",
+   "trust_points": [
+    "All work fully insured and guaranteed",
+    "Free estimates",
+    "Part P Electrical Safety",
+    "TrustMark Government Endorsed Standards",
+    "NAPIT approved",
+    "City & Guilds Qualified"
+   ],
    "logo_note": "blue/red wordmark",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/elect-rick-installation-and-testing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/elect-rick-installation-and-testing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/elect-rick-installation-and-testing/ad.png"
   },
   {
@@ -296,14 +462,26 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#2596ba",
-    "#98b9c4",
-    "#3c3b3d",
-    "#d5e5e9"
+    "#2595ba",
+    "#9ecedc",
+    "#eff8f9"
    ],
-   "ad_text": "",
+   "ad_text": "Waste Management Solutions\nROB THE VAN MAN\nWASTE MANAGEMENT SOLUTIONS\nThe solution to your waste: house, garage and shed clearances, trade waste, fridge freezer disposal and tip runs.\nOAP Discount\n07866 627253",
+   "services": [
+    "house clearances",
+    "garage clearances",
+    "shed clearances",
+    "trade waste",
+    "fridge freezer disposal",
+    "tip runs"
+   ],
+   "tagline": "The solution to your waste",
+   "trust_points": [
+    "OAP Discount"
+   ],
    "logo_note": "teal title band; van graphic above",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/rob-the-van-man-waste-management/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/rob-the-van-man-waste-management/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/rob-the-van-man-waste-management/ad.png"
   },
   {
@@ -317,14 +495,31 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#1d7abb",
-    "#bbbfc8",
-    "#1a161a",
-    "#818288"
+    "#1b161a",
+    "#266694",
+    "#0e0a0c",
+    "#d3e5ed"
    ],
-   "ad_text": "",
+   "ad_text": "seaden [HOMES] NEED A HANDYMAN? FLAT-PACK \u2022 PICTURE HANGING BLINDS INSTALLED \u2022 PAINTING TILING \u2022 BULBS CHANGED SHELVING \u2022 GENERAL REPAIRS BATHROOM IMPROVEMENTS BUILT-IN WARDROBES & STORAGE SHELVING \u2022 DOOR FURNITURE REPLACEMENT \u2022 BATH SEALANT... NO JOB TOO SMALL Call Sean on 07504 515967 seadenhomes \u2022 email: sean@seadenhomes.com",
+   "services": [
+    "Flat-pack",
+    "Picture hanging",
+    "Blinds installed",
+    "Painting",
+    "Tiling",
+    "Bulbs changed",
+    "Shelving",
+    "General repairs",
+    "Bathroom improvements",
+    "Built-in wardrobes & storage",
+    "Door furniture replacement",
+    "Bath sealant"
+   ],
+   "tagline": "NO JOB TOO SMALL",
+   "trust_points": [],
    "logo_note": "black circle house logo; domain dead - ok",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/seaden-homes-handyman/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/seaden-homes-handyman/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/seaden-homes-handyman/ad.png"
   },
   {
@@ -338,14 +533,31 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#ede82a",
     "#000000",
-    "#28231e",
-    "#77732a"
+    "#f0e827",
+    "#fefd3d",
+    "#12110b"
    ],
-   "ad_text": "",
+   "ad_text": "M S JOINERY\nBespoke Joinery\nDoors \u2022 Windows \u2022 Kitchens\nFlooring \u2022 Plumbing\nDecorating \u2022 Plastering\nRenovations \u2022 Loft Conversions\nOver 30 Yrs' Exp.\nTel 01723 361915 | 07771 821813\nNo Job Too Small",
+   "services": [
+    "Bespoke Joinery",
+    "Doors",
+    "Windows",
+    "Kitchens",
+    "Flooring",
+    "Plumbing",
+    "Decorating",
+    "Plastering",
+    "Renovations",
+    "Loft Conversions"
+   ],
+   "tagline": "No Job Too Small",
+   "trust_points": [
+    "Over 30 Yrs' Exp."
+   ],
    "logo_note": "M&S hammers roundel",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/m-and-s-bespoke-joinery/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/m-and-s-bespoke-joinery/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/m-and-s-bespoke-joinery/ad.png"
   },
   {
@@ -360,13 +572,26 @@
    "county": "North Yorkshire",
    "palette": [
     "#e3e2e8",
-    "#a59689",
-    "#727077",
-    "#333555"
+    "#302755",
+    "#f9f6eb",
+    "#89849c"
    ],
-   "ad_text": "",
+   "ad_text": "NICK TURNER JOINERY\nAll aspects of carpentry & joinery\nDoor hanging & fitting \u2022 Flooring \u2022 Bespoke shelving\nStorage \u2022 Kitchens \u2022 Stairs\n07455 023655 \u2022 turnerjoinery88@gmail.com",
+   "services": [
+    "Carpentry",
+    "Joinery",
+    "Door hanging & fitting",
+    "Flooring",
+    "Bespoke shelving",
+    "Storage",
+    "Kitchens",
+    "Stairs"
+   ],
+   "tagline": "All aspects of carpentry & joinery",
+   "trust_points": [],
    "logo_note": "navy title + tools bg",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/nick-turner-joinery/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/nick-turner-joinery/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/nick-turner-joinery/ad.png"
   },
   {
@@ -381,13 +606,29 @@
    "county": "North Yorkshire",
    "palette": [
     "#000000",
-    "#8dc958",
-    "#424638",
-    "#617152"
+    "#0e0c0e",
+    "#8fcb5a",
+    "#4b593e"
    ],
-   "ad_text": "",
+   "ad_text": "R SMITH ELECTRICAL\nLOCAL \u2022 RELIABLE \u2022 TRUSTED\nNO JOB TOO SMALL\nRELIABLE LOCAL ELECTRICIAN THAT YOU CAN TRUST\n07411 530435\nRSELECTRICAL82@GMAIL.COM\nNAPIT\nCOVERING HOMES AND BUSINESSES ACROSS THE LOCAL AREA\nDOMESTIC \u2022 COMMERCIAL \u2022 INSPECTION & TESTING \u2022 EICRS\nFUSEBOARDS \u2022 LED LIGHTING",
+   "services": [
+    "DOMESTIC",
+    "COMMERCIAL",
+    "INSPECTION & TESTING",
+    "EICRS",
+    "FUSEBOARDS",
+    "LED LIGHTING"
+   ],
+   "tagline": "RELIABLE LOCAL ELECTRICIAN THAT YOU CAN TRUST",
+   "trust_points": [
+    "LOCAL",
+    "RELIABLE",
+    "TRUSTED",
+    "NAPIT"
+   ],
    "logo_note": "lightning icon + green wordmark",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-smith-electrical/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-smith-electrical/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-smith-electrical/ad.png"
   },
   {
@@ -401,14 +642,26 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#384a4d",
-    "#57867b",
-    "#b3bebb",
-    "#e9edec"
+    "#5e9085",
+    "#578177",
+    "#d3dddb",
+    "#96afaa"
    ],
-   "ad_text": "",
+   "ad_text": "S&D East Coast Decorators\nPainter & Decorator - Steven Maltas\n\u2022 City & Guilds Qualified\n\u2022 Over 40 Years' Experience\n\u2022 Local & Reliable\n\u2022 Fully Insured\nFree estimates available\nCALL US ON 07597237220 or Email us on ste303maltas@gmail.com",
+   "services": [
+    "Painter & Decorator"
+   ],
+   "tagline": null,
+   "trust_points": [
+    "City & Guilds Qualified",
+    "Over 40 Years' Experience",
+    "Local & Reliable",
+    "Fully Insured",
+    "Free estimates available"
+   ],
    "logo_note": "serif title on sage",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/s-and-d-east-coast-decorators/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/s-and-d-east-coast-decorators/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/s-and-d-east-coast-decorators/ad.png"
   },
   {
@@ -422,14 +675,27 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#63bd63",
-    "#d8e4e3",
-    "#723c92",
-    "#4b464e"
+    "#74c15c",
+    "#d3dee9",
+    "#81a572",
+    "#635866"
    ],
-   "ad_text": "",
+   "ad_text": "TRIFECTA SCAFFOLDING\nScaffolding SERVICES\nFully health and safety compliant\nPublic liability insured\nFast & reliable | Clean & tidy service\nProfessional & friendly team\nCompetitive pricing\nGet in touch today for a free quote:\n07514758202",
+   "services": [
+    "Scaffolding services"
+   ],
+   "tagline": "Scaffolding SERVICES",
+   "trust_points": [
+    "Fully health and safety compliant",
+    "Public liability insured",
+    "Fast & reliable",
+    "Clean & tidy service",
+    "Professional & friendly team",
+    "Competitive pricing"
+   ],
    "logo_note": "green oval emblem",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/trifecta-scaffolding/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/trifecta-scaffolding/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/trifecta-scaffolding/ad.png"
   }
  ]

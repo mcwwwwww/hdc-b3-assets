@@ -2,9 +2,13 @@
  "batch": "3.2",
  "formspree": "https://formspree.io/f/mpqgeoaj",
  "instructions": {
-  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England.",
-  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; }. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
-  "design": "Design each site from its palette[] colours and ad_text. Use palette[0] as the primary brand colour. Clean, modern, mobile-first, professional. Sections: hero (logo, business name, one-line pitch, phone call-to-action button with tel: link), services (from ad_text), why-choose-us / trust points (experience, insured, free quotes \u2014 only claims present in ad_text), service area (town + surrounding area), contact section.",
+  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England \u2014 they must impress the owner enough to buy.",
+  "quality_bar_CRITICAL": "These pages are sold to the business owners, so they must look like a professional agency built them \u2014 NOT like a template. Spend equal, full effort on every one of the 20 sites, including the last ones. A flat page of centred text blocks is a failure. Every site needs: a designed hero with visual depth (layered gradients from the palette, a large CSS/SVG decorative motif drawn from the trade \u2014 e.g. a roofline silhouette for a roofer, leaf shapes for a gardener, tile grid for a tiler), distinct section backgrounds that alternate rhythm, cards or split layouts for services (not plain bullet lists), generous whitespace, a sticky header with the business name and a call button, large expressive typography (use system font stacks with strong weights/sizes \u2014 e.g. 900-weight condensed-feel headings via font-stretch/letter-spacing), hover states, subtle scroll animations (CSS only, respect prefers-reduced-motion), and a strong footer CTA band.",
+  "variety_rule": "The 20 sites must NOT share one layout. Vary hero composition (split hero / full-bleed gradient / diagonal section breaks / boxed card hero), section order, and graphic motifs so each looks individually designed for that trade. Two sites in the same trade must still look clearly different.",
+  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; border-radius: 8px; }. If the logo has a solid background colour that clashes with the hero, put it on a white/light card with padding. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
+  "content": "Each lead now includes ad_text (verbatim transcription of their printed magazine advert), services[], tagline, and trust_points[] \u2014 all taken from the real ad. Build the services section from services[] (one card each, with a short benefit-focused sentence you write for that trade). Use tagline in the hero if present. Use trust_points for a why-choose-us strip. You may write natural marketing copy around these facts (local, friendly, reliable framing) but never invent specific claims: no made-up years of experience, prices, reviews, certifications, or guarantees that are not in trust_points/ad_text.",
+  "design": "palette[] is extracted from the business's LOGO. The site's colours MUST visibly match the logo: palette[0] (or the most saturated palette colour) is the primary brand colour for the header, buttons and section accents; the others are supporting tones; derive light/dark tints for backgrounds. A visitor must never see a logo whose colours clash with the page around it. Mobile-first, fast, accessible (contrast AA, focus states). Sections: hero (logo, business name, tagline/one-line pitch, phone CTA with tel: link), services, why-choose-us / trust points, service area (town + surrounding area, name nearby towns), contact.",
+  "trade_photo": "If the lead has a photo_datauri (or photo_datauri_url), it is a professional 16:9 photo of this trade. Use it large \u2014 as the hero background (with a palette-tinted overlay for text contrast) or as a split-hero / section image. Every site with a photo must actually display it.",
   "contact_form": "Every site gets a contact form posting to https://formspree.io/f/mpqgeoaj with method POST, fields: name, phone, message, and a hidden input name='_subject' value='<business> enquiry'. Also show the business phone number prominently with a tel: link.",
   "phone_rule": "Use the exact phone (and landline if present) given in this manifest. Never invent phone numbers, emails, addresses, prices, or reviews.",
   "email_rule": "Only show an email address if the manifest email field is non-empty; use it exactly as written.",
@@ -25,13 +29,26 @@
    "county": "North Yorkshire",
    "palette": [
     "#fec62b",
-    "#1e1a1d",
-    "#faf9f4",
-    "#aa8b3c"
+    "#231f1f",
+    "#5c4c2b",
+    "#c29f41"
    ],
-   "ad_text": "",
+   "ad_text": "M. FAIRWEATHER\nGROUNDWORKS\n\u2022 Driveways \u2022 Concreting\n\u2022 Paths & Patios \u2022 Garden Alterations\n\u2022 Drainage \u2022 Foundations\n\u2022 Demolition \u2022 Rubble Crushing\nClive House, Brafferton, Helperby, York. YO61 2PQ\nPhone: 01423 360418 Mobile: 07974 435353",
+   "services": [
+    "Driveways",
+    "Concreting",
+    "Paths & Patios",
+    "Garden Alterations",
+    "Drainage",
+    "Foundations",
+    "Demolition",
+    "Rubble Crushing"
+   ],
+   "tagline": "GROUNDWORKS",
+   "trust_points": [],
    "logo_note": "black M.FAIRWEATHER slab text + GROUNDWORKS badge on yellow, digger silhouette",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/m-fairweather-groundworks/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/m-fairweather-groundworks/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/m-fairweather-groundworks/ad.png"
   },
   {
@@ -46,13 +63,27 @@
    "county": "North Yorkshire",
    "palette": [
     "#cfd1d0",
-    "#434c5c",
-    "#7f7f8a",
-    "#a1a2a3"
+    "#a9a692",
+    "#585851",
+    "#c5c5ba"
    ],
-   "ad_text": "",
+   "ad_text": "GS Gold & Silver York\nSELL GOLD & SILVER TODAY\nWHY CHOOSE US?\n\u2022 TOP PRICES\n\u2022 INSTANT CASH\n\u2022 NO OBLIGATION\n\u2022 FAMILY RUN\n\u2022 YORK OFFICE\n\u2022 5 \u2605 ON GOOGLE\nGET THE BEST PRICES TODAY. INSTANT CASH!\nCONTACT US TODAY\n01904 276078 | 07513 371260",
+   "services": [
+    "Buying gold",
+    "Buying silver"
+   ],
+   "tagline": "SELL GOLD & SILVER TODAY",
+   "trust_points": [
+    "Top prices",
+    "Instant cash",
+    "No obligation",
+    "Family run",
+    "York office",
+    "5 star on Google"
+   ],
    "logo_note": "gold/silver GS monogram emblem with 'Gold & Silver York' plate; csv email info@highgateroofing.com was neighbouring Highgate ad - dropped",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/gold-and-silver-york/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/gold-and-silver-york/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/gold-and-silver-york/ad.png"
   },
   {
@@ -67,13 +98,34 @@
    "county": "North Yorkshire",
    "palette": [
     "#04010c",
-    "#928376",
-    "#6b5e55",
-    "#362f2f"
+    "#b0966a",
+    "#f5deaf",
+    "#5b4a35"
    ],
-   "ad_text": "",
+   "ad_text": "R TAYLOR & SON PLASTERERS\nSINCE 1983\n40+ years of quality plastering across York and surrounding areas.\nBEFORE\nAFTER\nSKIMMING\nDRY LINING\nCEILING REPAIRS\nPATCH REPAIRS\nFULL RENOVATIONS\nSMOOTH FINISHES. LASTING IMPACT.\nFREE QUOTES\n07940 504356\nFAST RESPONSE\nNO JOB TOO SMALL\nSERVING YORK AND SURROUNDING AREAS\nWHY CHOOSE US?\nFAMILY-RUN BUSINESS\nPersonal service you can rely on.\nRELIABLE & FRIENDLY\nWe turn up on time, every time.\nQUALITY WORKMANSHIP\nFlawless finishes, built to last.\nCOMPETITIVE PRICES\nHigh standards at honest prices.\nDOMESTIC & COMMERCIAL\nAll aspects of plastering undertaken.\n5-STAR RATED ON GOOGLE\n40+ YEARS EXPERIENCE\nSkilled. Experienced. Trusted.\nFULLY INSURED\nFor your peace of mind.\nCHECKATRADE & GOOGLE REVIEWS",
+   "services": [
+    "Skimming",
+    "Dry Lining",
+    "Ceiling Repairs",
+    "Patch Repairs",
+    "Full Renovations",
+    "Domestic & Commercial Plastering"
+   ],
+   "tagline": "SMOOTH FINISHES. LASTING IMPACT.",
+   "trust_points": [
+    "Since 1983",
+    "40+ years of quality plastering / 40+ years experience",
+    "5-star rated on Google",
+    "Fully insured",
+    "Family-run business",
+    "Reliable & friendly",
+    "Quality workmanship",
+    "Competitive prices",
+    "Checkatrade & Google reviews"
+   ],
    "logo_note": "gold circular trowel emblem + R TAYLOR & SON PLASTERERS serif gold/white text on black",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-taylor-and-son-plasterers/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-taylor-and-son-plasterers/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-taylor-and-son-plasterers/ad.png"
   },
   {
@@ -87,14 +139,29 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#231f20",
     "#e5eedb",
-    "#7b8867",
-    "#d2d7ce"
+    "#2a2b24",
+    "#91a05c",
+    "#b9bb92"
    ],
-   "ad_text": "",
+   "ad_text": "Decking, fencing, paths & patios \u2022 Stump grinding \u2022 Landscaping \u2022 General garden maintenance \u2022 All aspects of tree work \u2022 Jet washing\n\nContact us for a free quote:\n01904 896 512\n07599 078 932\nyorkshiregardencompany@gmail.com\nwww.facebook.com/yorkgardenlandscaping/\n\nYork GARDEN COMPANY",
+   "services": [
+    "Decking",
+    "Fencing",
+    "Paths & patios",
+    "Stump grinding",
+    "Landscaping",
+    "General garden maintenance",
+    "Tree work",
+    "Jet washing"
+   ],
+   "tagline": null,
+   "trust_points": [
+    "Free quote"
+   ],
    "logo_note": "'York' script + GARDEN COMPANY block text on pale sage; csv email office@cjramsay.co.uk was neighbouring C.J.Ramsay ad - dropped",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/york-garden-company/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/york-garden-company/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/york-garden-company/ad.png"
   },
   {
@@ -108,14 +175,31 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#040b27",
-    "#d5d5d8",
-    "#545248",
-    "#898971"
+    "#363d53",
+    "#727882",
+    "#acadad",
+    "#c9cbcb"
    ],
-   "ad_text": "",
+   "ad_text": "J.P Services Contractors Ltd\nFOR ALL YOUR LANDSCAPING NEEDS\nLANDSCAPING \u2022 DRIVEWAYS \u2022 GROUNDWORKS\nTRANSFORM YOUR OUTDOOR SPACE\nSpecialising in high-quality landscaping for homes, retirement properties & commercial spaces.\nOUR SERVICES\n- Patios & Paving\n- Driveways\n- Artificial Grass\n- Fencing & Gates\n- Garden Transformations\n- Groundworks\n- Repairs & Maintenance\nBefore\nAfter\nFriendly, reliable service\nFully insured\nFree, no-obligation quotes\nCALL LUKE TODAY FOR A FREE QUOTE 07835 872944\nlukejpservices@gmail.com\nESTABLISHED OVER 30 YEARS",
+   "services": [
+    "Patios & Paving",
+    "Driveways",
+    "Artificial Grass",
+    "Fencing & Gates",
+    "Garden Transformations",
+    "Groundworks",
+    "Repairs & Maintenance"
+   ],
+   "tagline": "TRANSFORM YOUR OUTDOOR SPACE",
+   "trust_points": [
+    "Friendly, reliable service",
+    "Fully insured",
+    "Free, no-obligation quotes",
+    "ESTABLISHED OVER 30 YEARS"
+   ],
    "logo_note": "heraldic crest + navy 'J.P Services Contractors Ltd' serif text",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/j-p-services-contractors-ltd/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/j-p-services-contractors-ltd/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/j-p-services-contractors-ltd/ad.png"
   },
   {
@@ -129,14 +213,24 @@
    "town": "Easingwold",
    "county": "North Yorkshire",
    "palette": [
-    "#183a6a",
-    "#0a143a",
-    "#010004",
-    "#5c4d5d"
+    "#febe26",
+    "#0a163c",
+    "#21325c",
+    "#12224c"
    ],
-   "ad_text": "",
+   "ad_text": "SMART HOME SOLUTIONS\nTV SOLUTIONS\nCCTV & SECURITY\nWI-FI\nSTARLINK\nMOBILE CONTROL\nCall Steve Now!\n0800 587 0755 - 07972 181 025",
+   "services": [
+    "TV Solutions",
+    "CCTV & Security",
+    "Wi-Fi",
+    "Starlink",
+    "Mobile Control"
+   ],
+   "tagline": "SMART HOME SOLUTIONS",
+   "trust_points": [],
    "logo_note": "yellow SMART HOME SOLUTIONS block text on dark-blue night-house ad; icons TV/CCTV/WiFi/Starlink",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/smart-home-solutions-york/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/smart-home-solutions-york/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/smart-home-solutions-york/ad.png"
   },
   {
@@ -150,14 +244,23 @@
    "town": "Haxby",
    "county": "North Yorkshire",
    "palette": [
-    "#3a86bf",
-    "#f5f7f8",
-    "#175f99",
-    "#115185"
+    "#3f90d0",
+    "#3584c0",
+    "#30658c",
+    "#c4d8e7"
    ],
-   "ad_text": "",
+   "ad_text": "CUSTOM AUTOMOTIVE KEYS\n\nCar key cutting & programming\nAll keys lost service\nMobile service\nHousehold keys\n\nContact Jason\n07885 944400\ncustomautokeys@gmail.com\n\nLocated near the Haxby Sports Bar",
+   "services": [
+    "Car key cutting & programming",
+    "All keys lost service",
+    "Mobile service",
+    "Household keys"
+   ],
+   "tagline": "CUSTOM AUTOMOTIVE KEYS",
+   "trust_points": [],
    "logo_note": "white italic CUSTOM AUTOMOTIVE KEYS text on blue, car-key photo right",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/custom-automotive-keys/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/custom-automotive-keys/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/custom-automotive-keys/ad.png"
   },
   {
@@ -171,14 +274,27 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#aece30",
-    "#514f38",
-    "#93a240",
-    "#b2c35f"
+    "#2d2717",
+    "#404d41",
+    "#a4b0a8",
+    "#647d6a"
    ],
-   "ad_text": "",
+   "ad_text": "HPL TREE SURGEONS\nPROFESSIONAL TREE SERVICES\nTree removal \u2022 Tree shaping & pruning\nHedge trimming\nAll waste removed from site\n24-Hour emergency work undertaken\n7 days a week\nCALL FOR A FREE QUOTE\n07760 667883\n01904 533291",
+   "services": [
+    "Tree removal",
+    "Tree shaping & pruning",
+    "Hedge trimming",
+    "All waste removed from site",
+    "24-Hour emergency work"
+   ],
+   "tagline": "PROFESSIONAL TREE SERVICES",
+   "trust_points": [
+    "7 days a week",
+    "Free quote"
+   ],
    "logo_note": "brown HPL tree emblem + PROFESSIONAL TREE SERVICES text on white/green",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/hpl-tree-surgeons/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/hpl-tree-surgeons/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/hpl-tree-surgeons/ad.png"
   },
   {
@@ -192,14 +308,32 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#b2120e",
-    "#291d21",
-    "#bbadb2",
-    "#7b7882"
+    "#451610",
+    "#c32325",
+    "#c46666",
+    "#ca8a8a"
    ],
-   "ad_text": "",
+   "ad_text": "PD ROOFING FLAT ROOF SPECIALISTS\nFLAT ROOF SPECIALISTS\nNew build roofs or refurbishment of existing roofs\nReplacement of fascia boards & soffits\n\u2022 Strong \u2022 Durable \u2022 Choice of colours \u2022 No seams or joints \u2022 Dry Verge \u2022 Tile Vents\nInsulate your conservatory this Summer. We remove your existing roof & replace it with a fully insulated flat roof.\nWe are a family-run company built on quality, reliability & professionalism.\nBBA BRITISH BOARD OF AGR\u00c9MENT\nFIBREGLASS ROOF SPECIALISTS\nOVER 30 YEARS' EXPERIENCE\nFREE SURVEYS & QUOTATIONS\n\u2022 10-year guarantee on all refurbishment work \u2022\n\u2022 20-year manufacturer's guarantee on new roofs \u2022\nCall us today to discuss your needs on:\n01904 767638 or 07718 521107",
+   "services": [
+    "New build roofs",
+    "Refurbishment of existing roofs",
+    "Replacement of fascia boards & soffits",
+    "Dry Verge",
+    "Tile Vents",
+    "Conservatory insulation",
+    "Fibreglass roofing"
+   ],
+   "tagline": "We are a family-run company built on quality, reliability & professionalism.",
+   "trust_points": [
+    "BBA approved",
+    "Over 30 years' experience",
+    "Free surveys & quotations",
+    "10-year guarantee on all refurbishment work",
+    "20-year manufacturer's guarantee on new roofs"
+   ],
    "logo_note": "red outlined PD ROOFING FLAT ROOF SPECIALISTS block text on white",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/pd-roofing-flat-roof-specialists/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/pd-roofing-flat-roof-specialists/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/pd-roofing-flat-roof-specialists/ad.png"
   },
   {
@@ -213,14 +347,28 @@
    "town": "Fulford York",
    "county": "North Yorkshire",
    "palette": [
-    "#f1e205",
-    "#0062a5",
-    "#5d92ad",
-    "#162b3c"
+    "#0062a2",
+    "#033e69",
+    "#135784",
+    "#749bb4"
    ],
-   "ad_text": "",
+   "ad_text": "YORKSHIRE ROOFS YORK\nALL ASPECTS OF ROOFING UNDERTAKEN\nNEW ROOFS \u2022 ROOFING REPAIRS\nSLATING \u2022 TILING \u2022 GRP FIBREGLASS\nUPVC FASCIAS \u2022 SOFFITS & GUTTERING\nFOR A FREE QUOTE CALL\n07500 762797\nyorkroofs@gmail.com\n30 Grange Garth, Fulford, York YO10 4BS",
+   "services": [
+    "New roofs",
+    "Roofing repairs",
+    "Slating",
+    "Tiling",
+    "GRP fibreglass",
+    "UPVC fascias",
+    "Soffits & guttering"
+   ],
+   "tagline": "ALL ASPECTS OF ROOFING UNDERTAKEN",
+   "trust_points": [
+    "Free quote"
+   ],
    "logo_note": "white serif YORKSHIRE ROOFS YORK on navy banner strip",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/yorkshire-roofs-york/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/yorkshire-roofs-york/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/yorkshire-roofs-york/ad.png"
   },
   {
@@ -234,14 +382,27 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#7ba6ac",
-    "#f4f5f3",
-    "#4d8990",
-    "#bcc9c7"
+    "#4d8890",
+    "#82aaaf",
+    "#e8f8f9",
+    "#9ec1c5"
    ],
-   "ad_text": "",
+   "ad_text": "CLEAN WINDOWS OF YORKSHIRE\nRELIABLE AND FRIENDLY SERVICE\nBring the sparkle to your windows and doors with our pure water cleaning system.\nA local, reliable and friendly service!\nOur Services:\n- Window cleaning\n- Gutter vacuuming\n- Conservatory Glass\n- Patio Doors\n- Cobweb Clear\n- Sill Scrubbing\nCall: 07346 040765\nFind us on Facebook",
+   "services": [
+    "Window cleaning",
+    "Gutter vacuuming",
+    "Conservatory Glass",
+    "Patio Doors",
+    "Cobweb Clear",
+    "Sill Scrubbing"
+   ],
+   "tagline": "Bring the sparkle to your windows and doors with our pure water cleaning system.",
+   "trust_points": [
+    "A local, reliable and friendly service!"
+   ],
    "logo_note": "teal circular badge CLEAN WINDOWS OF YORKSHIRE with diamond glyph",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/clean-windows-of-yorkshire/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/clean-windows-of-yorkshire/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/clean-windows-of-yorkshire/ad.png"
   },
   {
@@ -255,14 +416,27 @@
    "town": "Woodthorpe York",
    "county": "North Yorkshire",
    "palette": [
-    "#825c3a",
-    "#f7f19c",
-    "#444031",
-    "#040103"
+    "#21110d",
+    "#713436",
+    "#293939",
+    "#040105"
    ],
-   "ad_text": "",
+   "ad_text": "BUONGIORNO BISTRO\nItalian Restaurant in York \u2022 Independent \u2022 Authentic Sardinian Family Run\nTripadvisor Traveller's Choice Awards Best of the Best 2025\nA family-run Sardinian gem offering a fusion of traditional & contemporary dishes.\nCOME SEE WHY WE ARE RATED SO HIGHLY!\nBEST ITALIAN RESTAURANT 2025 BUONGIORNO BISTRO RESTAURANT GURU\nAcomb Wood Dr, Woodthorpe, York YO24 3XN\nTO BOOK CALL 07917 240024",
+   "services": [
+    "Italian restaurant",
+    "Sardinian cuisine",
+    "Bistro",
+    "Table booking"
+   ],
+   "tagline": "A family-run Sardinian gem offering a fusion of traditional & contemporary dishes.",
+   "trust_points": [
+    "Tripadvisor Traveller's Choice Awards Best of the Best 2025",
+    "Restaurant Guru Best Italian Restaurant 2025",
+    "Family-run"
+   ],
    "logo_note": "round rustic mandala emblem BUONGIORNO BISTRO, dark wood background",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/buongiorno-bistro/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/buongiorno-bistro/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/buongiorno-bistro/ad.png"
   },
   {
@@ -277,13 +451,24 @@
    "county": "North Yorkshire",
    "palette": [
     "#e5007e",
-    "#472e25",
-    "#b8806d",
-    "#ebd9d2"
+    "#67053a",
+    "#fbecf7",
+    "#cb5092"
    ],
-   "ad_text": "",
+   "ad_text": "Bonnie's Dog Walking Service\nTrusted Dog Walking & Pet Care in Haxby & the surrounding area.\n\u2022 Prices start from \u00a310.00\n\u2022 Fully Insured\n\u2022 First Aid Certificate\n\u2022 DBS checked\nCall us today on 07766 584 426\nbonniesdogwalkingservice@outlook.com",
+   "services": [
+    "Dog Walking",
+    "Pet Care"
+   ],
+   "tagline": "Trusted Dog Walking & Pet Care in Haxby & the surrounding area.",
+   "trust_points": [
+    "Fully Insured",
+    "First Aid Certificate",
+    "DBS checked"
+   ],
    "logo_note": "Bonnie's Dog Walking Service white/pink script on magenta, golden retriever photo right",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/bonnies-dog-walking-service/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/bonnies-dog-walking-service/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/bonnies-dog-walking-service/ad.png"
   },
   {
@@ -298,13 +483,27 @@
    "county": "North Yorkshire",
    "palette": [
     "#1a1b1d",
-    "#9e9984",
-    "#59504c",
-    "#e4e2d3"
+    "#988d5f",
+    "#e1d7a9",
+    "#585138"
    ],
-   "ad_text": "",
+   "ad_text": "DSR ROOFING\nNO VAT\n\u2022 FULL NEW ROOF REPLACEMENTS\n\u2022 LEAD WORK \u2022 ROOF REPAIRS\n\u2022 GRP FIBREGLASS FLAT ROOFS\n\u2022 VELUX WINDOW INSTALLATIONS\nCONTACT DEAN VIA TEL/EMAIL FOR YOUR FREE NO-OBLIGATION QUOTE AND FRIENDLY PROFESSIONAL ADVICE.\nEMAIL: DSROOFINGYORK@OUTLOOK.COM\nTEL: 07521 990568",
+   "services": [
+    "Full new roof replacements",
+    "Lead work",
+    "Roof repairs",
+    "GRP fibreglass flat roofs",
+    "Velux window installations"
+   ],
+   "tagline": null,
+   "trust_points": [
+    "No VAT",
+    "Free no-obligation quote",
+    "Friendly professional advice"
+   ],
    "logo_note": "gold roofline glyph + DSR ROOFING serif gold/white on black, NO VAT roundel",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/dsr-roofing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/dsr-roofing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/dsr-roofing/ad.png"
   },
   {
@@ -318,14 +517,31 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#6c6b6b",
-    "#cab8ae",
-    "#c52429",
-    "#ba8c79"
+    "#d1242a",
+    "#eca4a6",
+    "#e0696d",
+    "#d63b41"
    ],
-   "ad_text": "",
+   "ad_text": "Mike Mcfarland Joinery\nLOOKING FOR A SKILLED, RELIABLE TRADESMAN YOU CAN TRUST??\nWe specialise in bespoke joinery, kitchens and building work, delivering high quality craftsmanship from start to finish.\nBespoke Joinery\nCarpentry\nWoodwork\nDoors & Flooring\nFitted Units\nLoft Conversions\nExtensions\n& Much More!\nWe work closely with you to bring your ideas to life!\nCALL US TODAY ON 07814 642667",
+   "services": [
+    "Bespoke Joinery",
+    "Kitchens",
+    "Building work",
+    "Carpentry",
+    "Woodwork",
+    "Doors & Flooring",
+    "Fitted Units",
+    "Loft Conversions",
+    "Extensions"
+   ],
+   "tagline": "LOOKING FOR A SKILLED, RELIABLE TRADESMAN YOU CAN TRUST??",
+   "trust_points": [
+    "Skilled, reliable tradesman you can trust",
+    "Delivering high quality craftsmanship from start to finish"
+   ],
    "logo_note": "white 'Mike Mcfarland Joinery' text on red banner",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/mike-mcfarland-joinery/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/mike-mcfarland-joinery/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/mike-mcfarland-joinery/ad.png"
   },
   {
@@ -339,14 +555,31 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#ccc9ca",
-    "#b2929a",
-    "#a82641",
-    "#4d4849"
+    "#b18390",
+    "#e2bcc8",
+    "#f4f1f2",
+    "#ae3153"
    ],
-   "ad_text": "",
+   "ad_text": "S-T-N ELECTRICAL\nFAMILY-RUN BUSINESS\nNO JOB TOO SMALL\nFRIENDLY RELIABLE SERVICE\nOver 35 years experience\n18TH EDITION PART P REGISTRATION\nFREE NO-OBLIGATION QUOTATIONS\nELECTRIC VEHICLE CHARGING\nTel: 07969 754481\nOffice: 01904 796392\nTRUSTMARK Government Endorsed Quality\nNAPIT Electrical\nPART P Electrical Safety Registered Installer\nCity & Guilds",
+   "services": [
+    "Electrical services",
+    "Electric vehicle charging"
+   ],
+   "tagline": "NO JOB TOO SMALL",
+   "trust_points": [
+    "Family-run business",
+    "Friendly reliable service",
+    "Over 35 years experience",
+    "18th Edition Part P Registration",
+    "Free no-obligation quotations",
+    "TrustMark Government Endorsed Quality",
+    "NAPIT Electrical registered",
+    "Part P Electrical Safety Registered Installer",
+    "City & Guilds qualified"
+   ],
    "logo_note": "dark-red S-T-N ELECTRICAL serif text on white",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/s-t-n-electrical/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/s-t-n-electrical/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/s-t-n-electrical/ad.png"
   },
   {
@@ -360,14 +593,26 @@
    "town": "Tadcaster",
    "county": "North Yorkshire",
    "palette": [
-    "#f5c316",
-    "#4ba4b7",
     "#043657",
-    "#286882"
+    "#c7cbb9",
+    "#668087",
+    "#1b4762"
    ],
-   "ad_text": "",
+   "ad_text": "ANDREW MALLINSON PLUMBING & HEATING\nBoiler Replacement\nLandlord Gas Safety Checks\nAll Plumbing Repairs\nBoiler Breakdown and Servicing\nDrainage & Blocked Drains\nFriendly and reliable and no job too small\nGas Safe 143898\n07794 400 698\nmjmallinson@gmail.com\nVaillant\nideal BOILERS\nWORCESTER Bosch Group",
+   "services": [
+    "Boiler Replacement",
+    "Landlord Gas Safety Checks",
+    "All Plumbing Repairs",
+    "Boiler Breakdown and Servicing",
+    "Drainage & Blocked Drains"
+   ],
+   "tagline": "Friendly and reliable and no job too small",
+   "trust_points": [
+    "Gas Safe Registered (143898)"
+   ],
    "logo_note": "ANDREW MALLINSON white + PLUMBING & HEATING white/yellow block text on deep blue",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/andrew-mallinson-plumbing-and-heating/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/andrew-mallinson-plumbing-and-heating/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/andrew-mallinson-plumbing-and-heating/ad.png"
   },
   {
@@ -381,14 +626,25 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#261f21",
-    "#393234",
-    "#6891b6",
-    "#445863"
+    "#f48222",
+    "#020104",
+    "#f79a3b",
+    "#6f3a14"
    ],
-   "ad_text": "",
+   "ad_text": "Newbegin\nPROFESSIONAL BUILDING AND GLAZING SPECIALIST\nRoofing Repairs & Installations\nWindows & Doors\nStunning Conservatories\nSmart Home Solutions\n01904 654381 | 07539 929 529\nJameswilcock@newbeginglazing.co.uk",
+   "services": [
+    "Roofing Repairs & Installations",
+    "Windows & Doors",
+    "Stunning Conservatories",
+    "Smart Home Solutions",
+    "Professional Building",
+    "Glazing Specialist"
+   ],
+   "tagline": "PROFESSIONAL BUILDING AND GLAZING SPECIALIST",
+   "trust_points": [],
    "logo_note": "orange Newbegin square tile with NB rune monogram; email domain dead - keep per earlier curl check",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/newbegin-glazing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/newbegin-glazing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/newbegin-glazing/ad.png"
   },
   {
@@ -402,14 +658,28 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#244d93",
     "#fff004",
-    "#faf9ee",
-    "#bcc2c3"
+    "#465473",
+    "#9ea06d",
+    "#192850"
    ],
-   "ad_text": "",
+   "ad_text": "AERIALS & SATELLITES\nFreeview Aerials | Freesat Dishes\nCustom Wall Mounted TVs\n\u2022 Extra TV points for Freeview or Satellite\n\u2022 Reception & poor signal issues \u2022 TV set-up\n\u2022 Free advice/quotes \u2022 Fully qualified/insured\n- STEWART PICKARD -\n07706 116177",
+   "services": [
+    "Freeview Aerials",
+    "Freesat Dishes",
+    "Custom Wall Mounted TVs",
+    "Extra TV points for Freeview or Satellite",
+    "Reception & poor signal issues",
+    "TV set-up"
+   ],
+   "tagline": null,
+   "trust_points": [
+    "Free advice/quotes",
+    "Fully qualified/insured"
+   ],
    "logo_note": "logo=yellow AERIALS & SATELLITES header w/ TV",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/stewart-pickard-aerials-and-satellites/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/stewart-pickard-aerials-and-satellites/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/stewart-pickard-aerials-and-satellites/ad.png"
   },
   {
@@ -424,13 +694,24 @@
    "county": "North Yorkshire",
    "palette": [
     "#892b3d",
-    "#994b59",
-    "#bdc3c3",
-    "#986d78"
+    "#a6d7d5",
+    "#9d6873",
+    "#a2b2b7"
    ],
-   "ad_text": "",
+   "ad_text": "TJ plastering contractors\nDry lining, plastering repairs and Artex removal.\nFree no-obligation quotes.\nAll budgets catered for.\n01723 370604 \u2022 07828 995548\ntjplastering.keenan@gmail.com\nSee my work pictures on Facebook and see my reviews and pictures on YELL.COM",
+   "services": [
+    "Dry lining",
+    "plastering repairs",
+    "Artex removal"
+   ],
+   "tagline": null,
+   "trust_points": [
+    "Free no-obligation quotes",
+    "All budgets catered for"
+   ],
    "logo_note": "TJ logo + plasterer graphic",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/tj-plastering-contractors/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/tj-plastering-contractors/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/tj-plastering-contractors/ad.png"
   }
  ]

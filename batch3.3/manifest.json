@@ -2,9 +2,13 @@
  "batch": "3.3",
  "formspree": "https://formspree.io/f/mpqgeoaj",
  "instructions": {
-  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England.",
-  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; }. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
-  "design": "Design each site from its palette[] colours and ad_text. Use palette[0] as the primary brand colour. Clean, modern, mobile-first, professional. Sections: hero (logo, business name, one-line pitch, phone call-to-action button with tel: link), services (from ad_text), why-choose-us / trust points (experience, insured, free quotes \u2014 only claims present in ad_text), service area (town + surrounding area), contact section.",
+  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England \u2014 they must impress the owner enough to buy.",
+  "quality_bar_CRITICAL": "These pages are sold to the business owners, so they must look like a professional agency built them \u2014 NOT like a template. Spend equal, full effort on every one of the 20 sites, including the last ones. A flat page of centred text blocks is a failure. Every site needs: a designed hero with visual depth (layered gradients from the palette, a large CSS/SVG decorative motif drawn from the trade \u2014 e.g. a roofline silhouette for a roofer, leaf shapes for a gardener, tile grid for a tiler), distinct section backgrounds that alternate rhythm, cards or split layouts for services (not plain bullet lists), generous whitespace, a sticky header with the business name and a call button, large expressive typography (use system font stacks with strong weights/sizes \u2014 e.g. 900-weight condensed-feel headings via font-stretch/letter-spacing), hover states, subtle scroll animations (CSS only, respect prefers-reduced-motion), and a strong footer CTA band.",
+  "variety_rule": "The 20 sites must NOT share one layout. Vary hero composition (split hero / full-bleed gradient / diagonal section breaks / boxed card hero), section order, and graphic motifs so each looks individually designed for that trade. Two sites in the same trade must still look clearly different.",
+  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; border-radius: 8px; }. If the logo has a solid background colour that clashes with the hero, put it on a white/light card with padding. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
+  "content": "Each lead now includes ad_text (verbatim transcription of their printed magazine advert), services[], tagline, and trust_points[] \u2014 all taken from the real ad. Build the services section from services[] (one card each, with a short benefit-focused sentence you write for that trade). Use tagline in the hero if present. Use trust_points for a why-choose-us strip. You may write natural marketing copy around these facts (local, friendly, reliable framing) but never invent specific claims: no made-up years of experience, prices, reviews, certifications, or guarantees that are not in trust_points/ad_text.",
+  "design": "palette[] is extracted from the business's LOGO. The site's colours MUST visibly match the logo: palette[0] (or the most saturated palette colour) is the primary brand colour for the header, buttons and section accents; the others are supporting tones; derive light/dark tints for backgrounds. A visitor must never see a logo whose colours clash with the page around it. Mobile-first, fast, accessible (contrast AA, focus states). Sections: hero (logo, business name, tagline/one-line pitch, phone CTA with tel: link), services, why-choose-us / trust points, service area (town + surrounding area, name nearby towns), contact.",
+  "trade_photo": "If the lead has a photo_datauri (or photo_datauri_url), it is a professional 16:9 photo of this trade. Use it large \u2014 as the hero background (with a palette-tinted overlay for text contrast) or as a split-hero / section image. Every site with a photo must actually display it.",
   "contact_form": "Every site gets a contact form posting to https://formspree.io/f/mpqgeoaj with method POST, fields: name, phone, message, and a hidden input name='_subject' value='<business> enquiry'. Also show the business phone number prominently with a tel: link.",
   "phone_rule": "Use the exact phone (and landline if present) given in this manifest. Never invent phone numbers, emails, addresses, prices, or reviews.",
   "email_rule": "Only show an email address if the manifest email field is non-empty; use it exactly as written.",
@@ -25,13 +29,30 @@
    "county": "North Yorkshire",
    "palette": [
     "#000000",
-    "#fde9c1",
-    "#5f4c2c",
-    "#917a54"
+    "#f6a829",
+    "#f1ce3b",
+    "#f8f25d"
    ],
-   "ad_text": "Get in Touch Today \\ 07467 243264 @ Col Dock plastering for a FREE Quote & colinl4594@icloud.com",
+   "ad_text": "Col Dock Plastering, Rendering & General Building\n\nQuality Workmanship You Can Trust\n\nAt Col Dock Plastering & Rendering, we deliver high-quality results with a professional, reliable service.\n\nEvery job is completed with attention to detail, clear communication and a clean, tidy finish.\n\nOur Services:\n\u2022 Plastering\n\u2022 Rendering\n\u2022 Plasterboarding\n\u2022 Damp Proofing\n\u2022 Full Refurbishments\n\u2022 General Building Work\n\nWhy Choose Us:\n\u2022 Fully insured\n\u2022 5 \u2605 rated by our customers\n\u2022 Clean, tidy and professional\n\u2022 Reliable and always on time\n\u2022 No job too big or small\n\nGet in Touch Today for a FREE Quote\n07467 243264\ncolin14594@icloud.com\nCol Dock plastering",
+   "services": [
+    "Plastering",
+    "Rendering",
+    "Plasterboarding",
+    "Damp Proofing",
+    "Full Refurbishments",
+    "General Building Work"
+   ],
+   "tagline": "Quality Workmanship You Can Trust",
+   "trust_points": [
+    "Fully insured",
+    "5 \u2605 rated by our customers",
+    "Clean, tidy and professional",
+    "Reliable and always on time",
+    "No job too big or small"
+   ],
    "logo_note": "full-page ad; gold shield logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/col-dock-plastering/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/col-dock-plastering/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/col-dock-plastering/ad.png"
   },
   {
@@ -46,12 +67,26 @@
    "county": "North Yorkshire",
    "palette": [
     "#231f20",
-    "#d6dadb",
-    "#83574b"
+    "#7cb8c7",
+    "#7f3a27",
+    "#9c9072"
    ],
-   "ad_text": "",
+   "ad_text": "PLUMBING & HEATING\nFor ALL your plumbing work, from leaky taps to bathroom installations\nFAST, RELIABLE & EFFICIENT PLUMBERS\nCall Steve Mitchinson on: 07941 645532",
+   "services": [
+    "Plumbing",
+    "Heating",
+    "Leaky taps",
+    "Bathroom installations"
+   ],
+   "tagline": "FAST, RELIABLE & EFFICIENT PLUMBERS",
+   "trust_points": [
+    "Fast",
+    "Reliable",
+    "Efficient"
+   ],
    "logo_note": "wordmark header + tap graphic",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/steve-mitchinson-plumbing-and-heating/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/steve-mitchinson-plumbing-and-heating/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/steve-mitchinson-plumbing-and-heating/ad.png"
   },
   {
@@ -65,14 +100,23 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#01549c",
-    "#006dae",
-    "#2c417f",
-    "#80abce"
+    "#0073b4",
+    "#d7e8f2",
+    "#933a4f",
+    "#4b95c2"
    ],
-   "ad_text": "",
+   "ad_text": "Q Plumbing Services\nFOR ALL YOUR PLUMBING NEEDS...\nBATHROOM INSTALLATION\nALL GENERAL PLUMBING WORK\nWALL & FLOOR TILING\nPLUMBING REPAIRS\nNO JOB TOO SMALL\nTel: 07948 463156 or 01723 882176",
+   "services": [
+    "Bathroom installation",
+    "All general plumbing work",
+    "Wall & floor tiling",
+    "Plumbing repairs"
+   ],
+   "tagline": "NO JOB TOO SMALL",
+   "trust_points": [],
    "logo_note": "red Q + white wordmark on blue",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/q-plumbing-services/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/q-plumbing-services/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/q-plumbing-services/ad.png"
   },
   {
@@ -86,14 +130,25 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#41ae4b",
     "#2093d2",
-    "#e3ecd1",
-    "#73b37e"
+    "#5cad59",
+    "#e1e84b",
+    "#258abc"
    ],
-   "ad_text": "",
+   "ad_text": "PLUMBING & HEATING ENGINEER\nFOR ALL YOUR PLUMBING, HEATING & GAS WORK\nBathroom Tiling Specialist\nBoiler Swaps\nFull Central Heating Systems\nSubcontract All Gas Work Out\nLittle Al's\n07980 276539",
+   "services": [
+    "Plumbing",
+    "Heating",
+    "Gas Work",
+    "Bathroom Tiling Specialist",
+    "Boiler Swaps",
+    "Full Central Heating Systems"
+   ],
+   "tagline": "FOR ALL YOUR PLUMBING, HEATING & GAS WORK",
+   "trust_points": [],
    "logo_note": "Little Al's yellow script",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/little-als-plumbing-and-heating/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/little-als-plumbing-and-heating/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/little-als-plumbing-and-heating/ad.png"
   },
   {
@@ -108,13 +163,26 @@
    "county": "North Yorkshire",
    "palette": [
     "#231f20",
-    "#c08550",
-    "#b4a68e",
-    "#eeefef"
+    "#e9b67a",
+    "#855d32"
    ],
-   "ad_text": "",
+   "ad_text": "PAUL PINDER PAVING\nPAVING & GENERAL BUILDING WORK\nPatios \u2022 Driveways \u2022 Fencing \u2022 Concreting \u2022 Landscaping\nCall James 07547 355993 or Paul 07989 428048\nHumanby and Filey based",
+   "services": [
+    "Paving",
+    "General Building Work",
+    "Patios",
+    "Driveways",
+    "Fencing",
+    "Concreting",
+    "Landscaping"
+   ],
+   "tagline": "PAVING & GENERAL BUILDING WORK",
+   "trust_points": [
+    "Humanby and Filey based"
+   ],
    "logo_note": "orange title block; James 07547 355993 / Paul 07989 428048",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-pinder-paving/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-pinder-paving/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-pinder-paving/ad.png"
   },
   {
@@ -129,13 +197,30 @@
    "county": "North Yorkshire",
    "palette": [
     "#8d9ba4",
-    "#565758",
-    "#c2c8c9",
-    "#eaede4"
+    "#222122",
+    "#bdc6c8",
+    "#635f60"
    ],
-   "ad_text": "",
+   "ad_text": "OBLMO\nPlumbing & Heating\nBoiler installations - Central heating\nBathrooms - Power flushing\nLandlord certificates\nAll aspects of plumbing, heating & gas\nTime-served local tradesman\n07709 848304\nCity & Guilds\nGas Safe Register",
+   "services": [
+    "Boiler installations",
+    "Central heating",
+    "Bathrooms",
+    "Power flushing",
+    "Landlord certificates",
+    "Plumbing",
+    "Heating",
+    "Gas"
+   ],
+   "tagline": "Plumbing & Heating",
+   "trust_points": [
+    "Time-served local tradesman",
+    "City & Guilds",
+    "Gas Safe Register"
+   ],
    "logo_note": "BLM droplet+flame logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/blm-plumbing-and-heating/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/blm-plumbing-and-heating/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/blm-plumbing-and-heating/ad.png"
   },
   {
@@ -150,13 +235,25 @@
    "county": "North Yorkshire",
    "palette": [
     "#fce412",
-    "#7c732b",
-    "#bbae24",
-    "#36301c"
+    "#0e0a1b",
+    "#37321a",
+    "#c8b92b"
    ],
-   "ad_text": "",
+   "ad_text": "KS COMPUTER SERVICES\nFULLY QUALIFIED TECHNICIAN\nLaptop & PC Repairs & Upgrades, Computer Tuition, CompTIA, Refurbished Laptops & Tablets Available, Television Set Ups\nFriendly Service\n07814 539969\n01723 639732\nkevshawtech@sky.com",
+   "services": [
+    "Laptop & PC Repairs & Upgrades",
+    "Computer Tuition",
+    "Refurbished Laptops & Tablets Available",
+    "Television Set Ups"
+   ],
+   "tagline": "Friendly Service",
+   "trust_points": [
+    "FULLY QUALIFIED TECHNICIAN",
+    "CompTIA"
+   ],
    "logo_note": "yellow ad, header wordmark",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ks-computer-services/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ks-computer-services/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ks-computer-services/ad.png"
   },
   {
@@ -171,13 +268,26 @@
    "county": "North Yorkshire",
    "palette": [
     "#b9ac9b",
-    "#4c3b16",
-    "#645a4a",
-    "#2f271d"
+    "#1e1918",
+    "#c9bdae",
+    "#5d503b"
    ],
-   "ad_text": "",
+   "ad_text": "Fresh Look Services\nInterior and Exterior\n\u2022 Roofing\n\u2022 General Building\n\u2022 GRP Fibreglass Roofing\n\u2022 Plastering & Decorating\nFully Insured - No VAT\nNo Job Too Big or Small\nCall Steve\nTel: 07746 041608",
+   "services": [
+    "Roofing",
+    "General Building",
+    "GRP Fibreglass Roofing",
+    "Plastering & Decorating",
+    "Interior and Exterior work"
+   ],
+   "tagline": "No Job Too Big or Small",
+   "trust_points": [
+    "Fully Insured",
+    "No VAT"
+   ],
    "logo_note": "header wordmark",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/fresh-look-services/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/fresh-look-services/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/fresh-look-services/ad.png"
   },
   {
@@ -191,14 +301,27 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#000000",
-    "#866c4a",
-    "#533f2a",
-    "#cbad7e"
+    "#000001",
+    "#dba44f",
+    "#c3883b",
+    "#8b6d48"
    ],
-   "ad_text": "",
+   "ad_text": "DS K9\nPET WORKING\nONE TO ONE\nBEHAVIOURAL\nASSESSMENTS\nSCENT CADAVER TRACKING\nNTIPDU ACCREDITED INSTRUCTOR\n50 YEARS EXPERIENCE\nTEL 07970 700348\nTRAINING. TRUST. RESULTS.",
+   "services": [
+    "PET WORKING",
+    "ONE TO ONE",
+    "BEHAVIOURAL",
+    "ASSESSMENTS",
+    "SCENT CADAVER TRACKING"
+   ],
+   "tagline": "TRAINING. TRUST. RESULTS.",
+   "trust_points": [
+    "NTIPDU ACCREDITED INSTRUCTOR",
+    "50 YEARS EXPERIENCE"
+   ],
    "logo_note": "gold DS K9 letters",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ds-k9-dog-training/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ds-k9-dog-training/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/ds-k9-dog-training/ad.png"
   },
   {
@@ -213,13 +336,22 @@
    "county": "North Yorkshire",
    "palette": [
     "#231f20",
-    "#beb083",
-    "#5b6970",
-    "#f5e9c2"
+    "#e8d181",
+    "#3f382a",
+    "#bba970"
    ],
-   "ad_text": "",
+   "ad_text": "EASTFIELD CARS\nEastfield's Only Taxi Service\nAirport and local work undertaken\n4 & 8-seater vehicles available\nContact us today on:\n07835 917052",
+   "services": [
+    "Airport work",
+    "Local work",
+    "Taxi service",
+    "4 & 8-seater vehicles"
+   ],
+   "tagline": "Eastfield's Only Taxi Service",
+   "trust_points": [],
    "logo_note": "gold frame + steering wheel icon",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/eastfield-cars/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/eastfield-cars/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/eastfield-cars/ad.png"
   },
   {
@@ -233,14 +365,24 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#27406c",
-    "#bf2d36",
-    "#7886a0",
-    "#e0dddf"
+    "#120d13",
+    "#ee1e23",
+    "#1d5394",
+    "#b9bcbf"
    ],
-   "ad_text": "",
+   "ad_text": "Single Items 2 Full House\n\nA2B REMOVALS & STORAGE\nLocal & Nationwide\n\nLET A2B TAKE THE STRESS OUT OF MOVING...\n\nHouse removals\nMan & van services\nOffice removals\nHouse clearance\nStorage facilities\n\n01723 350 661\n07738 867 062",
+   "services": [
+    "House removals",
+    "Man & van services",
+    "Office removals",
+    "House clearance",
+    "Storage facilities"
+   ],
+   "tagline": "LET A2B TAKE THE STRESS OUT OF MOVING...",
+   "trust_points": [],
    "logo_note": "A2B red/blue logo block",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/a2b-removals-and-storage/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/a2b-removals-and-storage/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/a2b-removals-and-storage/ad.png"
   },
   {
@@ -254,14 +396,22 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#cf242a",
-    "#100808",
-    "#808c93",
-    "#d3d2ce"
+    "#869fa6",
+    "#b4afaf",
+    "#5e474b",
+    "#2b1718"
    ],
-   "ad_text": "",
+   "ad_text": "R.J. VALETING\nMobile Automotive Valeting\nPrices start from only \u00a335\nAUTOGLYM approved\nMob: 07837 713175\nE: richard.warters@btinternet.com\nRichard J. Warters",
+   "services": [
+    "Mobile Automotive Valeting"
+   ],
+   "tagline": "Mobile Automotive Valeting",
+   "trust_points": [
+    "AUTOGLYM approved"
+   ],
    "logo_note": "italic title over car photo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-j-valeting/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-j-valeting/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-j-valeting/ad.png"
   },
   {
@@ -275,14 +425,35 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#ee028b",
-    "#a87f84",
-    "#dfccaf",
-    "#fdf68e"
+    "#ed028b",
+    "#e385ba",
+    "#fdf5fb",
+    "#d20079"
    ],
-   "ad_text": "",
+   "ad_text": "ABLE ROOFING\n\u2022 Repair Work \u2022 GRP Fibre Glass\n\u2022 Tiles \u2022 Pointing \u2022 Lead Valleys\n\u2022 Chimneys \u2022 Slates \u2022 Flats \u2022 Roofs\n\u2022 Felt & Lead \u2022 uPVC Fascias & Gutters\n20 Years' Experience \u2022 Qualified Tradesmen\nEMERGENCY REPAIRS INSURANCE COMPANY APPROVED\nFor a free quote call Steve on\n07852 956164 \u2022 01723 341302\n4 Parkfield Gardens, Scarborough YO12 5NW",
+   "services": [
+    "Repair Work",
+    "GRP Fibre Glass",
+    "Tiles",
+    "Pointing",
+    "Lead Valleys",
+    "Chimneys",
+    "Slates",
+    "Flats",
+    "Roofs",
+    "Felt & Lead",
+    "uPVC Fascias & Gutters",
+    "Emergency Repairs"
+   ],
+   "tagline": null,
+   "trust_points": [
+    "20 Years' Experience",
+    "Qualified Tradesmen",
+    "Insurance Company Approved"
+   ],
    "logo_note": "white on pink roof-shape wordmark",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/able-roofing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/able-roofing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/able-roofing/ad.png"
   },
   {
@@ -297,13 +468,21 @@
    "county": "North Yorkshire",
    "palette": [
     "#fff004",
-    "#241f1a",
-    "#b3a91f",
-    "#6e661b"
+    "#2c2514",
+    "#756c19",
+    "#aea319"
    ],
-   "ad_text": "",
+   "ad_text": "JOHNSON'S CHIMNEY SWEEP\nEST. 1950\nSCARBOROUGH AND DISTRICT\nT: 01723 371166 / M: 07581 360972\nScarborough's Leading Chimney Sweep",
+   "services": [
+    "Chimney Sweep"
+   ],
+   "tagline": "Scarborough's Leading Chimney Sweep",
+   "trust_points": [
+    "Established 1950"
+   ],
    "logo_note": "vintage lettering on yellow",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/johnsons-chimney-sweep/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/johnsons-chimney-sweep/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/johnsons-chimney-sweep/ad.png"
   },
   {
@@ -317,14 +496,28 @@
    "town": "Scarborough/Bridlington",
    "county": "North Yorkshire",
    "palette": [
-    "#6f7679",
-    "#ef1822",
-    "#edeadc",
-    "#d18673"
+    "#0a0909",
+    "#cb202b",
+    "#821b2a",
+    "#bbaeaf"
    ],
-   "ad_text": "PROGRP Walasnul: CONSERVATORY INSULATED ROOF SPECIALISTS FIBREGLASS FLAT ROOFS eaneeaeer REPATS&x MOSS/REMOVAL IS YOUR CONSERVATORY TOO HOT OR COLD? OR IS IT NOISY IN THE RAIN? USE YOUR CONSERVATORY ALL YEAR ROUND - CALL US FOR THE IDEAL SOLUTION! YOUR LOCAL CONSERVATORY INSULATED FIBREGLASS SPECIALISTS! 40 YEARS\u2019 EXPERIENCE * WE BEAT ALL QUOTES! CALL US TODAY ON 07515 653411 PROUD TO SUPPORT \u00a9 PENGUINS OF BRIDLINGTON",
+   "ad_text": "PROGRP ROOFING\nLIFETIME GUARANTEE (FIBREGLASS ROOFS INC.)\nCONSERVATORY INSULATED ROOF SPECIALISTS\nFIBREGLASS FLAT ROOFS\nBEFORE\nAFTER\nGENERAL ROOF REPAIRS & MOSS REMOVAL\nFREE INSULATION WITH EVERY FIBREGLASS ROOF T&Cs Apply\nIS YOUR CONSERVATORY TOO HOT OR COLD? OR IS IT NOISY IN THE RAIN?\nUSE YOUR CONSERVATORY ALL YEAR ROUND - CALL US FOR THE IDEAL SOLUTION!\nYOUR LOCAL CONSERVATORY INSULATED FIBREGLASS SPECIALISTS!\n40 YEARS' EXPERIENCE \u2022 WE BEAT ALL QUOTES!\nCALL US TODAY ON 07515 653411\nPROUD TO SUPPORT PENGUINS OF BRIDLINGTON",
+   "services": [
+    "Conservatory Insulated Roofs",
+    "Fibreglass Flat Roofs",
+    "General Roof Repairs",
+    "Moss Removal",
+    "Free Insulation"
+   ],
+   "tagline": "CONSERVATORY INSULATED ROOF SPECIALISTS",
+   "trust_points": [
+    "LIFETIME GUARANTEE",
+    "40 YEARS' EXPERIENCE",
+    "WE BEAT ALL QUOTES!"
+   ],
    "logo_note": "full-page ad; white rounded PRO GRP ROOFING box",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/pro-grp-roofing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/pro-grp-roofing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/pro-grp-roofing/ad.png"
   },
   {
@@ -338,14 +531,27 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#353535",
-    "#292728",
-    "#bcc0c3",
-    "#6a6261"
+    "#2b2a2b",
+    "#65272a",
+    "#efefef",
+    "#888788"
    ],
-   "ad_text": "",
+   "ad_text": "FIRST CALL GRP ROOFING\nNeed a flat roof?\nCall First Call GRP Roofing\nNo joints, no seams = no leaks\nNew GRP Roofs | GRP Re-Roofs\nGRP Repairs | Rubber Roof Installation\n\u2022 Available in various colours\n\u2022 Very competitive prices\n\u2022 Based in Scarborough\nCall Martin GRP Roofing\n07891 859 537",
+   "services": [
+    "New GRP Roofs",
+    "GRP Re-Roofs",
+    "GRP Repairs",
+    "Rubber Roof Installation",
+    "Flat Roofing"
+   ],
+   "tagline": "No joints, no seams = no leaks",
+   "trust_points": [
+    "Very competitive prices",
+    "Based in Scarborough"
+   ],
    "logo_note": "FIRST CALL red + GRP ROOFING white on dark",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/first-call-grp-roofing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/first-call-grp-roofing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/first-call-grp-roofing/ad.png"
   },
   {
@@ -359,14 +565,27 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#231f20",
-    "#8a898a",
-    "#dadada",
-    "#454343"
+    "#848588",
+    "#252223",
+    "#3d3d3d",
+    "#f2f2f2"
    ],
-   "ad_text": "",
+   "ad_text": "JH Plastering\n\nAll aspects of plastering for renovations, extensions & new builds.\n\nArtex cover up.\n\nSkimming, patching & repairs.\n\nStud walls & ceilings built & plastered.\n\nReliable, friendly, personal service.\n\nJamie Heritage\n07518 597022\njamieh1985@icloud.com",
+   "services": [
+    "Plastering for renovations, extensions & new builds",
+    "Artex cover up",
+    "Skimming",
+    "Patching & repairs",
+    "Stud walls built & plastered",
+    "Ceilings built & plastered"
+   ],
+   "tagline": "Reliable, friendly, personal service.",
+   "trust_points": [
+    "Reliable, friendly, personal service"
+   ],
    "logo_note": "JH monogram + Plastering",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jh-plastering/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jh-plastering/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jh-plastering/ad.png"
   },
   {
@@ -380,14 +599,23 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#5e5852",
-    "#87847f",
-    "#d5d4cd",
-    "#241f20"
+    "#252223",
+    "#ebe4d2",
+    "#363334",
+    "#746f69"
    ],
-   "ad_text": "",
+   "ad_text": "Carpentry and Joinery\nTIMBER WINDOW REPAIRS\nKITCHEN FITTING\nDOOR HANGING/ EASING\nALL TIMBER AND JOINERY WORKS UNDERTAKEN\nMILLWARD TAYLOR\n07818591019\nrd.millwardtaylor@gmail.com",
+   "services": [
+    "Timber window repairs",
+    "Kitchen fitting",
+    "Door hanging/ easing",
+    "All timber and joinery works"
+   ],
+   "tagline": "Carpentry and Joinery",
+   "trust_points": [],
    "logo_note": "emblem + cream Carpentry and Joinery",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/millward-taylor-carpentry-and-joinery/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/millward-taylor-carpentry-and-joinery/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/millward-taylor-carpentry-and-joinery/ad.png"
   },
   {
@@ -401,14 +629,34 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#23376c",
-    "#d0c1b6",
-    "#46526a",
-    "#ababaa"
+    "#263c90",
+    "#9298a6",
+    "#c4c7d0",
+    "#e9ebf0"
    ],
-   "ad_text": "",
+   "ad_text": "20+ YEARS' EXPERIENCE\nEAST COAST ROOFING & SONS\nLOCAL FAMILY-RUN BUSINESS\nNEW ROOFS \u2022 FLAT ROOFS \u2022 ROOF REPAIRS \u2022 RIDGE & TILE POINTING\nCHIMNEYS \u2022 RE-POINTING \u2022 DRY RIDGE & VERGES\nFASCIAS & SOFFITS \u2022 GUTTERING \u2022 LEADWORK\n24-HOUR CALL OUT \u2022 GRP SPECIALIST\nTHE PROOF IS ON THE ROOF\nEMAIL: ECRANDSONS@YAHOO.COM\nMOBILE: 07706 411088\nTEL: 01723 239512",
+   "services": [
+    "New Roofs",
+    "Flat Roofs",
+    "Roof Repairs",
+    "Ridge & Tile Pointing",
+    "Chimneys",
+    "Re-pointing",
+    "Dry Ridge & Verges",
+    "Fascias & Soffits",
+    "Guttering",
+    "Leadwork",
+    "24-Hour Call Out",
+    "GRP Specialist"
+   ],
+   "tagline": "THE PROOF IS ON THE ROOF",
+   "trust_points": [
+    "20+ Years' Experience",
+    "Local Family-Run Business"
+   ],
    "logo_note": "blue roofs logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/east-coast-roofing-and-sons/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/east-coast-roofing-and-sons/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/east-coast-roofing-and-sons/ad.png"
   },
   {
@@ -423,13 +671,26 @@
    "county": "North Yorkshire",
    "palette": [
     "#d3eada",
-    "#676a58",
-    "#bcc5b3",
-    "#e4f2e8"
+    "#253e89",
+    "#7c8f9f",
+    "#c0d6cd"
    ],
-   "ad_text": "",
+   "ad_text": "Quality Foot Care\nIn the comfort of your own home\nin the Ryedale & Scarborough area since 2010\nStuart Moore\nFoot Health Practitioner\nMCFHP MAFHP\nTel 01723 374668\nMobile 07855 190082\nBook your appointment today\nMember of BAFHP\nChecked Disclosure & Barring Service\nGDPR Compliant",
+   "services": [
+    "Foot Care",
+    "Home visits"
+   ],
+   "tagline": "In the comfort of your own home",
+   "trust_points": [
+    "In business since 2010",
+    "MCFHP MAFHP qualified",
+    "Member of BAFHP (British Association of Foot Health Professionals)",
+    "Checked Disclosure & Barring Service (DBS checked)",
+    "GDPR Compliant"
+   ],
    "logo_note": "blue italic name text-logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/stuart-moore-foot-health-practitioner/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/stuart-moore-foot-health-practitioner/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/stuart-moore-foot-health-practitioner/ad.png"
   }
  ]

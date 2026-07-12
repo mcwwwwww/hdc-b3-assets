@@ -11,13 +11,25 @@
   "county": "North Yorkshire",
   "palette": [
    "#081e35",
-   "#988a72",
-   "#494f4e",
-   "#796e5a"
+   "#857f72",
+   "#2b3b49",
+   "#c9cdd1"
   ],
-  "ad_text": "",
+  "ad_text": "WHEELDON'S DESIGN & BUILD\nBATHROOMS & KITCHENS\nFROM CONCEPT TO COMPLETION\nWE MANAGE THE ENTIRE PROJECT FROM START TO FINISH, DELIVERING QUALITY WORKMANSHIP THAT FITS YOUR BUDGET.\nNO HIDDEN COSTS, JUST BEAUTIFUL RESULTS.\nCALL US TODAY FOR A FREE, NO-OBLIGATION QUOTE:\n07940 327070\nCheckatrade.com\nFollow Us",
+  "services": [
+   "Design & Build",
+   "Bathrooms",
+   "Kitchens"
+  ],
+  "tagline": "FROM CONCEPT TO COMPLETION",
+  "trust_points": [
+   "Checkatrade.com member",
+   "Free, no-obligation quote",
+   "No hidden costs"
+  ],
   "logo_note": "gold/white serif on navy",
   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/wheeldons-design-and-build/logo.datauri.txt",
+  "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/wheeldons-design-and-build/photo.datauri.txt",
   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/wheeldons-design-and-build/ad.png"
  },
  {
@@ -32,13 +44,30 @@
   "county": "North Yorkshire",
   "palette": [
    "#406ab4",
-   "#e2e2ea",
-   "#c7cad0",
-   "#97a9c1"
+   "#839dc9",
+   "#dbe5f1"
   ],
-  "ad_text": "",
+  "ad_text": "R Milner Roofing & Building Contractors\nYOUR FULL RE-ROOF SPECIALISTS!\n\u2022 Full Re-Roofs\n\u2022 GRP Fibreglass Roofs\n\u2022 Slating & Tiling\n\u2022 Leadwork\n\u2022 Chimney Stacks\n\u2022 Pointing\n\u2022 Guttering\n\u2022 Plastering\n\u2022 Restoration Work\n\u2022 Storm Damage\nOVER 30 YEARS' EXPERIENCE\nGRP Fibreglass Flat Roofs\nINSURANCE WORK UNDERTAKEN\nFor a fast, friendly, free quote call 01723 859979 or 07811 365196",
+  "services": [
+   "Full Re-Roofs",
+   "GRP Fibreglass Roofs",
+   "Slating & Tiling",
+   "Leadwork",
+   "Chimney Stacks",
+   "Pointing",
+   "Guttering",
+   "Plastering",
+   "Restoration Work",
+   "Storm Damage",
+   "Insurance Work Undertaken"
+  ],
+  "tagline": "YOUR FULL RE-ROOF SPECIALISTS!",
+  "trust_points": [
+   "OVER 30 YEARS' EXPERIENCE"
+  ],
   "logo_note": "white title on blue",
   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-milner-roofing-and-building-contractors/logo.datauri.txt",
+  "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-milner-roofing-and-building-contractors/photo.datauri.txt",
   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/r-milner-roofing-and-building-contractors/ad.png"
  },
  {
@@ -53,12 +82,24 @@
   "county": "North Yorkshire",
   "palette": [
    "#515256",
-   "#818081",
-   "#cfd2d3"
+   "#c9cacb",
+   "#8f9092",
+   "#5f6064"
   ],
-  "ad_text": "",
+  "ad_text": "Zachary Hardgrave\nPLASTERING & RENDERING\n\nSERVICES:\n\u2022 Plastering\n\u2022 Rendering\n\u2022 Damp Proofing\n\u2022 Renovations\n\u2022 GRP Roofing\n\u2022 General Building\n\nGET IN TOUCH: 07534 312356",
+  "services": [
+   "Plastering",
+   "Rendering",
+   "Damp Proofing",
+   "Renovations",
+   "GRP Roofing",
+   "General Building"
+  ],
+  "tagline": "PLASTERING & RENDERING",
+  "trust_points": [],
   "logo_note": "plasterer figure + name",
   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/zachary-hardgrave-plastering-and-rendering/logo.datauri.txt",
+  "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/zachary-hardgrave-plastering-and-rendering/photo.datauri.txt",
   "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/zachary-hardgrave-plastering-and-rendering/ad.png"
  }
 ]

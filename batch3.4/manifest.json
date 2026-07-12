@@ -2,9 +2,13 @@
  "batch": "3.4",
  "formspree": "https://formspree.io/f/mpqgeoaj",
  "instructions": {
-  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England.",
-  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; }. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
-  "design": "Design each site from its palette[] colours and ad_text. Use palette[0] as the primary brand colour. Clean, modern, mobile-first, professional. Sections: hero (logo, business name, one-line pitch, phone call-to-action button with tel: link), services (from ad_text), why-choose-us / trust points (experience, insured, free quotes \u2014 only claims present in ad_text), service area (town + surrounding area), contact section.",
+  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England \u2014 they must impress the owner enough to buy.",
+  "quality_bar_CRITICAL": "These pages are sold to the business owners, so they must look like a professional agency built them \u2014 NOT like a template. Spend equal, full effort on every one of the 20 sites, including the last ones. A flat page of centred text blocks is a failure. Every site needs: a designed hero with visual depth (layered gradients from the palette, a large CSS/SVG decorative motif drawn from the trade \u2014 e.g. a roofline silhouette for a roofer, leaf shapes for a gardener, tile grid for a tiler), distinct section backgrounds that alternate rhythm, cards or split layouts for services (not plain bullet lists), generous whitespace, a sticky header with the business name and a call button, large expressive typography (use system font stacks with strong weights/sizes \u2014 e.g. 900-weight condensed-feel headings via font-stretch/letter-spacing), hover states, subtle scroll animations (CSS only, respect prefers-reduced-motion), and a strong footer CTA band.",
+  "variety_rule": "The 20 sites must NOT share one layout. Vary hero composition (split hero / full-bleed gradient / diagonal section breaks / boxed card hero), section order, and graphic motifs so each looks individually designed for that trade. Two sites in the same trade must still look clearly different.",
+  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; border-radius: 8px; }. If the logo has a solid background colour that clashes with the hero, put it on a white/light card with padding. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
+  "content": "Each lead now includes ad_text (verbatim transcription of their printed magazine advert), services[], tagline, and trust_points[] \u2014 all taken from the real ad. Build the services section from services[] (one card each, with a short benefit-focused sentence you write for that trade). Use tagline in the hero if present. Use trust_points for a why-choose-us strip. You may write natural marketing copy around these facts (local, friendly, reliable framing) but never invent specific claims: no made-up years of experience, prices, reviews, certifications, or guarantees that are not in trust_points/ad_text.",
+  "design": "palette[] is extracted from the business's LOGO. The site's colours MUST visibly match the logo: palette[0] (or the most saturated palette colour) is the primary brand colour for the header, buttons and section accents; the others are supporting tones; derive light/dark tints for backgrounds. A visitor must never see a logo whose colours clash with the page around it. Mobile-first, fast, accessible (contrast AA, focus states). Sections: hero (logo, business name, tagline/one-line pitch, phone CTA with tel: link), services, why-choose-us / trust points, service area (town + surrounding area, name nearby towns), contact.",
+  "trade_photo": "If the lead has a photo_datauri (or photo_datauri_url), it is a professional 16:9 photo of this trade. Use it large \u2014 as the hero background (with a palette-tinted overlay for text contrast) or as a split-hero / section image. Every site with a photo must actually display it.",
   "contact_form": "Every site gets a contact form posting to https://formspree.io/f/mpqgeoaj with method POST, fields: name, phone, message, and a hidden input name='_subject' value='<business> enquiry'. Also show the business phone number prominently with a tel: link.",
   "phone_rule": "Use the exact phone (and landline if present) given in this manifest. Never invent phone numbers, emails, addresses, prices, or reviews.",
   "email_rule": "Only show an email address if the manifest email field is non-empty; use it exactly as written.",
@@ -24,14 +28,26 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#eedab9",
-    "#3ac5d2",
-    "#7dd2da",
-    "#5f5b4a"
+    "#fcb11b",
+    "#67ccd6",
+    "#38c8d4",
+    "#64603e"
    ],
-   "ad_text": "",
+   "ad_text": "SCARFORD EAR WAX REMOVAL\nIN YOUR OWN HOME\n\u2713 DBS CHECKED\n\u2713 QUICK EFFICIENT AND SUPPORTIVE SERVICE\n\u2713 PPE WORN\n\u2713 FULLY INSURED\nPlease contact Barbara\nBHSc (Hons) Audiology BSA\n01723 583830 or 07359 040155\nEmail scarford18@gmail.com\nMore details at thebestpages.co.uk",
+   "services": [
+    "Ear wax removal"
+   ],
+   "tagline": "IN YOUR OWN HOME",
+   "trust_points": [
+    "DBS CHECKED",
+    "QUICK EFFICIENT AND SUPPORTIVE SERVICE",
+    "PPE WORN",
+    "FULLY INSURED",
+    "BHSc (Hons) Audiology BSA"
+   ],
    "logo_note": "ear icon + gold title",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/scarford-ear-wax-removal/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/scarford-ear-wax-removal/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/scarford-ear-wax-removal/ad.png"
   },
   {
@@ -45,14 +61,33 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#802d74",
-    "#af8699",
-    "#ebdfdc",
-    "#547ca1"
+    "#1d1a1d",
+    "#52254a",
+    "#564a61",
+    "#927c8f"
    ],
-   "ad_text": "",
+   "ad_text": "FOOT HEALTH PRACTITIONER\nMOBILE FOOTCARE TREATMENTS IN YOUR HOME\nToenail Trimming\nCorn Removals\nCallus reduction\nVerruca Treatment\nIngrowing Toenail\nThick Nail Reduction\nFungal Nail\nDiabetic Feet\nCALL JANE PARK on:\n07534 374058\nQUALIFIED H.P.T.A. FHP DIP LEVEL 4\nTOL ACCREDITED COURSE REG-100042HPS - CIBTAC DIPLOMA - FULLY INSURED - DBS",
+   "services": [
+    "Toenail Trimming",
+    "Corn Removals",
+    "Callus reduction",
+    "Verruca Treatment",
+    "Ingrowing Toenail",
+    "Thick Nail Reduction",
+    "Fungal Nail",
+    "Diabetic Feet"
+   ],
+   "tagline": "MOBILE FOOTCARE TREATMENTS IN YOUR HOME",
+   "trust_points": [
+    "QUALIFIED H.P.T.A. FHP DIP LEVEL 4",
+    "TOL ACCREDITED COURSE REG-100042HPS",
+    "CIBTAC DIPLOMA",
+    "FULLY INSURED",
+    "DBS"
+   ],
    "logo_note": "purple ad, white title block",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jane-park-foot-health-practitioner/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jane-park-foot-health-practitioner/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jane-park-foot-health-practitioner/ad.png"
   },
   {
@@ -66,14 +101,24 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#183f76",
-    "#f1ebe5",
-    "#67635f",
-    "#a0adb3"
+    "#3d444b",
+    "#d3d7da",
+    "#5e656b",
+    "#969da1"
    ],
-   "ad_text": "",
+   "ad_text": "EAST COAST KEYS AUTO LOCKSMITH\n\nMobile Service\nKey Repairs/ Replacements\nVehicle Lockouts/ Non-Invasive Entry\nKeys Made When All Keys Are Lost\nKeys Cut And Programmed At Your Convenience - Home/Work\n\nAll at a fraction of the main dealer price\n\n07706 303038\n01723 817140\ninfo@eastcoastkeys.co.uk",
+   "services": [
+    "Mobile Service",
+    "Key Repairs/ Replacements",
+    "Vehicle Lockouts/ Non-Invasive Entry",
+    "Keys Made When All Keys Are Lost",
+    "Keys Cut And Programmed At Your Convenience - Home/Work"
+   ],
+   "tagline": "All at a fraction of the main dealer price",
+   "trust_points": [],
    "logo_note": "figure+key icon wordmark; domain parked - ok",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/east-coast-keys-auto-locksmith/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/east-coast-keys-auto-locksmith/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/east-coast-keys-auto-locksmith/ad.png"
   },
   {
@@ -87,14 +132,28 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#42508c",
-    "#8185a3",
-    "#cccedd",
-    "#5e6597"
+    "#253e8e",
+    "#1e1a1b",
+    "#9ca3b7",
+    "#edeff2"
    ],
-   "ad_text": "",
+   "ad_text": "MARK HESP\nPaving and Groundworks Ltd\nAll aspects of Block Paving and Slabbing undertaken\nGARDEN WALLS AND FENCING\n\u2022 Concreting\n\u2022 Resin Drives\n\u2022 Groundworks\n\u2022 Artificial Grass\n\u2022 House Extensions\nCALL JAKE TODAY\nTel: 07724 522768",
+   "services": [
+    "Block Paving",
+    "Slabbing",
+    "Garden Walls",
+    "Fencing",
+    "Concreting",
+    "Resin Drives",
+    "Groundworks",
+    "Artificial Grass",
+    "House Extensions"
+   ],
+   "tagline": "All aspects of Block Paving and Slabbing undertaken",
+   "trust_points": [],
    "logo_note": "serif MARK HESP header",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/mark-hesp-paving-and-groundworks/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/mark-hesp-paving-and-groundworks/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/mark-hesp-paving-and-groundworks/ad.png"
   },
   {
@@ -108,14 +167,25 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#231f20",
-    "#8b95bb",
-    "#bfc9de",
-    "#41517c"
+    "#000000",
+    "#848bae",
+    "#b1bace",
+    "#304e8c"
    ],
-   "ad_text": "",
+   "ad_text": "Domestic \u2022 Security \u2022 Agricultural \u2022 Equine \u2022 Steel Railings\nSimon Naylor Fencing\nALL TYPES OF FENCING AND GATES SUPPLIED AND ERECTED\n07807088182\nsimonnaylorfencing@live.co.uk",
+   "services": [
+    "Domestic fencing",
+    "Security fencing",
+    "Agricultural fencing",
+    "Equine fencing",
+    "Steel Railings",
+    "Fencing and gates supplied and erected"
+   ],
+   "tagline": "ALL TYPES OF FENCING AND GATES SUPPLIED AND ERECTED",
+   "trust_points": [],
    "logo_note": "blue fence graphic + italic wordmark",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/simon-naylor-fencing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/simon-naylor-fencing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/simon-naylor-fencing/ad.png"
   },
   {
@@ -129,14 +199,24 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#e2b380",
-    "#eac79e",
-    "#d8eff0",
-    "#a28875"
+    "#dbb388",
+    "#2f4180",
+    "#eac89e",
+    "#7f798b"
    ],
-   "ad_text": "",
+   "ad_text": "SESTON FENCE & DECKING SERVICES\nGARY SESTON\nFencing, Decking & Sheds\nOver 30 yrs' Experience\n07799 393507\nSESO@sky.com\nwww.facebook.com/seston.fencing",
+   "services": [
+    "Fencing",
+    "Decking",
+    "Sheds"
+   ],
+   "tagline": null,
+   "trust_points": [
+    "Over 30 yrs' Experience"
+   ],
    "logo_note": "wooden sign plank wordmark",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/seston-fence-and-decking-services/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/seston-fence-and-decking-services/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/seston-fence-and-decking-services/ad.png"
   },
   {
@@ -150,14 +230,23 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#194e78",
-    "#9f8f7a",
-    "#bac4bc",
-    "#627f76"
+    "#f3f1f2",
+    "#5d6753",
+    "#8d9a88",
+    "#272e24"
    ],
-   "ad_text": "",
+   "ad_text": "PAVING, DRIVEWAYS, LANDSCAPING AND GROUNDWORKS\nJ&J DRIVEWAYS\n07528 936 185 / 07399 093 072\nJJDRIVEWAYS88@GMAIL.COM",
+   "services": [
+    "Paving",
+    "Driveways",
+    "Landscaping",
+    "Groundworks"
+   ],
+   "tagline": "PAVING, DRIVEWAYS, LANDSCAPING AND GROUNDWORKS",
+   "trust_points": [],
    "logo_note": "white circle J&J DRIVEWAYS",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/j-and-j-driveways/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/j-and-j-driveways/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/j-and-j-driveways/ad.png"
   },
   {
@@ -171,14 +260,32 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#96ca55",
-    "#c3ae9d",
-    "#1c231e",
-    "#626648"
+    "#8cc63e",
+    "#426131",
+    "#deeec8",
+    "#9fcf5c"
    ],
-   "ad_text": "",
+   "ad_text": "BUDGET TREE SERVICES\nNo job too big or small\n- Tree removal / topping / pruning\n- Hedge maintenance\n- Weed control\n- Turfing\n- Decking\n- Gravelling\n- Driveways\n- Fencing\n15 years' experience. All rubbish removed. Commercial and non-commercial. Call us for a FREE quote\n01723 512 981\n07756 790 696\nFind us on bark",
+   "services": [
+    "Tree removal / topping / pruning",
+    "Hedge maintenance",
+    "Weed control",
+    "Turfing",
+    "Decking",
+    "Gravelling",
+    "Driveways",
+    "Fencing"
+   ],
+   "tagline": "No job too big or small",
+   "trust_points": [
+    "15 years' experience",
+    "All rubbish removed",
+    "Commercial and non-commercial",
+    "FREE quote"
+   ],
    "logo_note": "white on green title",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/budget-tree-services-yorks/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/budget-tree-services-yorks/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/budget-tree-services-yorks/ad.png"
   },
   {
@@ -193,13 +300,26 @@
    "county": "North Yorkshire",
    "palette": [
     "#2a8736",
-    "#769a8d",
-    "#a7c0b4",
-    "#e6ede7"
+    "#cce2d0",
+    "#589f68",
+    "#3f877b"
    ],
-   "ad_text": "",
+   "ad_text": "Just Trees\nFELLING OR PRUNING, ANY SIZE\nLow cost, tidy work, any distance, fir tree specialists\nAll types of hedges cut & maintained\nBook early for all your pruning, fruit trees/shrubs\nWRITTEN GUARANTEE\nOVER 70 YEARS' TREE EXPERIENCE\nOPEN 7 DAYS A WEEK\nWeekly visits to Scarborough, Hunmanby & Filey\nTel: 01751 460380\nMob: 07985 380969",
+   "services": [
+    "Felling",
+    "Pruning",
+    "Fir tree specialists",
+    "Hedges cut & maintained",
+    "Fruit trees/shrubs pruning"
+   ],
+   "tagline": "FELLING OR PRUNING, ANY SIZE",
+   "trust_points": [
+    "WRITTEN GUARANTEE",
+    "OVER 70 YEARS' TREE EXPERIENCE"
+   ],
    "logo_note": "white script on green",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/just-trees-yorks/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/just-trees-yorks/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/just-trees-yorks/ad.png"
   },
   {
@@ -213,14 +333,28 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#159646",
-    "#c4d3c1",
-    "#98c587",
-    "#edec06"
+    "#bed7ba",
+    "#1f1a1c",
+    "#687165",
+    "#94bf9b"
    ],
-   "ad_text": "",
+   "ad_text": "Easy Lawn\nBEST QUALITY SEEDED LAWN TURF\nSUPPLIED AND LAID\nBlock Paving, JCB Hire, Concreting, Fencing, Flagging, Tree Felling and Groundworks\nPinder Landscaping\nTel: 01723 891225\nMob: 07711 458394",
+   "services": [
+    "Seeded Lawn Turf Supplied and Laid",
+    "Block Paving",
+    "JCB Hire",
+    "Concreting",
+    "Fencing",
+    "Flagging",
+    "Tree Felling",
+    "Groundworks",
+    "Landscaping"
+   ],
+   "tagline": "BEST QUALITY SEEDED LAWN TURF SUPPLIED AND LAID",
+   "trust_points": [],
    "logo_note": "Pinder Landscaping black on sage band; Easy Lawn brand above",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/pinder-landscaping-easy-lawn/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/pinder-landscaping-easy-lawn/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/pinder-landscaping-easy-lawn/ad.png"
   },
   {
@@ -234,14 +368,22 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#a7bf68",
-    "#7b8957",
-    "#f9f8f4",
-    "#204222"
+    "#faf9f5",
+    "#266430",
+    "#8caf65",
+    "#6e7648"
    ],
-   "ad_text": "",
+   "ad_text": "HedgeMaster\nEXPERT HEDGE TRIMMING\n\nHedge Cutting\nLawn Care\nWaste Removal\n& MORE!\n\nGet in touch NOW for a quote at\n07737 449891\nhedgemaster2026@gmail.com\nServing Scarborough and the Surrounding Area",
+   "services": [
+    "Hedge Cutting",
+    "Lawn Care",
+    "Waste Removal"
+   ],
+   "tagline": "EXPERT HEDGE TRIMMING",
+   "trust_points": [],
    "logo_note": "illustrated badge",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/hedgemaster/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/hedgemaster/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/hedgemaster/ad.png"
   },
   {
@@ -256,13 +398,33 @@
    "county": "North Yorkshire",
    "palette": [
     "#fff57a",
-    "#211c1e",
-    "#bdb565",
-    "#5c5635"
+    "#1d181d",
+    "#888149",
+    "#ede577"
    ],
-   "ad_text": "",
+   "ad_text": "Drainage Problems Sorted\nBlocked Drains Jetted & Surveyed, Flooding, Land Drainage, Gravelling, Gardens, Driveways, Footings, Concrete Bases, Landscaping, Ponds & Septic Tank Installations. Topsoil & Aggregates For Sale.\nFencing available\nFully insured & 40 years' experience.\nMob: 07860 522599\nTel: 01723 890440\ngji692@aol.com",
+   "services": [
+    "Blocked Drains Jetted & Surveyed",
+    "Flooding",
+    "Land Drainage",
+    "Gravelling",
+    "Gardens",
+    "Driveways",
+    "Footings",
+    "Concrete Bases",
+    "Landscaping",
+    "Ponds & Septic Tank Installations",
+    "Topsoil & Aggregates For Sale",
+    "Fencing"
+   ],
+   "tagline": "Drainage Problems Sorted",
+   "trust_points": [
+    "Fully insured",
+    "40 years' experience"
+   ],
    "logo_note": "black title on yellow",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/drainage-problems-sorted/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/drainage-problems-sorted/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/drainage-problems-sorted/ad.png"
   },
   {
@@ -276,14 +438,24 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#285986",
-    "#92c5e5",
-    "#274375",
-    "#1f2434"
+    "#07090c",
+    "#414b52",
+    "#798084",
+    "#cad0d2"
    ],
-   "ad_text": "",
+   "ad_text": "N & J MOBILE DIAMOND CUT WHEEL REPAIRS\nVehicle damaged?\nDon't delay, repair it today\nBumper Scuffs?\nPaint Scratches?\nAlloy Repair?\nMinor Dents?\nCall Nathan today for your FREE estimate\n07414 532181",
+   "services": [
+    "Bumper Scuffs",
+    "Paint Scratches",
+    "Alloy Repair",
+    "Minor Dents",
+    "Diamond Cut Wheel Repairs"
+   ],
+   "tagline": "Vehicle damaged? Don't delay, repair it today",
+   "trust_points": [],
    "logo_note": "winged wheel emblem",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/n-and-j-diamond-cut-wheel-repairs/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/n-and-j-diamond-cut-wheel-repairs/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/n-and-j-diamond-cut-wheel-repairs/ad.png"
   },
   {
@@ -298,13 +470,23 @@
    "county": "North Yorkshire",
    "palette": [
     "#9ed1f0",
-    "#6fb1c7",
-    "#292627",
-    "#617887"
+    "#32363c",
+    "#ecf7fb",
+    "#90b3c6"
    ],
-   "ad_text": "",
+   "ad_text": "ALLAN'S DECORATING SERVICES\nPainting & Decorating to a high standard\n30 years' experience\nFor a FREE quote please call\n01723 514246\n07793 322095\nCity & Guilds",
+   "services": [
+    "Painting",
+    "Decorating"
+   ],
+   "tagline": "Painting & Decorating to a high standard",
+   "trust_points": [
+    "30 years' experience",
+    "City & Guilds"
+   ],
    "logo_note": "outline title on sky blue",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/allans-decorating-services/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/allans-decorating-services/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/allans-decorating-services/ad.png"
   },
   {
@@ -319,13 +501,23 @@
    "county": "North Yorkshire",
    "palette": [
     "#175c2f",
-    "#b3ad74",
-    "#46723d",
-    "#f1f4f2"
+    "#bc9839",
+    "#ead7a2"
    ],
-   "ad_text": "",
+   "ad_text": "Churchill & Firth Roofing\nAll aspects of roofing\nFibreglass/Felt\nSlating & Re-tiling\nPointing\nRidge Tiling\nChimneys\nFlat Roofs\nT: 07957 729045\nE: churchillandfirth@hotmail.co.uk",
+   "services": [
+    "Fibreglass/Felt",
+    "Slating & Re-tiling",
+    "Pointing",
+    "Ridge Tiling",
+    "Chimneys",
+    "Flat Roofs"
+   ],
+   "tagline": "All aspects of roofing",
+   "trust_points": [],
    "logo_note": "orange rooflines on green",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/churchill-and-firth-roofing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/churchill-and-firth-roofing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/churchill-and-firth-roofing/ad.png"
   },
   {
@@ -340,12 +532,28 @@
    "county": "North Yorkshire",
    "palette": [
     "#7c51a1",
-    "#ae9fbb",
-    "#e5dfe9"
+    "#f5f1f7",
+    "#a98fbf"
    ],
-   "ad_text": "",
+   "ad_text": "All Double Glazing Repairs Local Service\nTel. 07813 337293\nREPAIRS TO: \u2022 Misted Glass Units \u2022 Hinges and Handles \u2022 Door & Window Mechanisms \u2022 UPVC Letterboxes Fitted \u2022 New UPVC Doors/Windows Fitted\nCall Rob Local Locksmith & Glazier\nBest Rates - Alliance Glass\nScarborough / Filey",
+   "services": [
+    "Double Glazing Repairs",
+    "Misted Glass Units Repairs",
+    "Hinges and Handles Repairs",
+    "Door & Window Mechanisms Repairs",
+    "UPVC Letterboxes Fitted",
+    "New UPVC Doors/Windows Fitted",
+    "Locksmith Services",
+    "Glazier Services"
+   ],
+   "tagline": "All Double Glazing Repairs Local Service",
+   "trust_points": [
+    "Best Rates",
+    "Local Service"
+   ],
    "logo_note": "white title on purple",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/all-double-glazing-repairs-alliance-glass/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/all-double-glazing-repairs-alliance-glass/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/all-double-glazing-repairs-alliance-glass/ad.png"
   },
   {
@@ -360,13 +568,29 @@
    "county": "North Yorkshire",
    "palette": [
     "#12263e",
-    "#d7884d",
-    "#e1ddda",
-    "#745c4f"
+    "#f1802c",
+    "#e0d7d1",
+    "#3e424c"
    ],
-   "ad_text": "",
+   "ad_text": "CHRIS COLETTA\nGENERAL BUILDER & ROOFER\nEXTENSIONS, LOFT & GARAGE CONVERSIONS\n\u2022 Walling, pointing & flagging\n\u2022 Loft windows\n\u2022 All types of roof & guttering works\n\u2022 Plastering & rendering\n\u2022 C.I.T.B. approved\n\u2022 Fast, efficient, friendly service\n\u2022 Free estimates\n07912 759040\nchriscoletta35@yahoo.com",
+   "services": [
+    "Extensions",
+    "Loft conversions",
+    "Garage conversions",
+    "Walling, pointing & flagging",
+    "Loft windows",
+    "Roof & guttering works",
+    "Plastering & rendering"
+   ],
+   "tagline": "GENERAL BUILDER & ROOFER",
+   "trust_points": [
+    "C.I.T.B. approved",
+    "Fast, efficient, friendly service",
+    "Free estimates"
+   ],
    "logo_note": "orange+white title on navy",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/chris-coletta-general-builder-and-roofer/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/chris-coletta-general-builder-and-roofer/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/chris-coletta-general-builder-and-roofer/ad.png"
   },
   {
@@ -380,14 +604,26 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#78272b",
-    "#6b6868",
-    "#cfa9a6",
-    "#dfc4c4"
+    "#c11f1f",
+    "#f07264",
+    "#e29c90",
+    "#fdf7f5"
    ],
-   "ad_text": "DHS Decorating {Interior & Exterior ; CHRIS COLETTA Igor) GENERAL BUILDER & ROOFER High-quality painting EXT E N S | O | S \u2019 & decorating High-quality painter Fully qualified & LOFT & GARAGE apprentice rained & Decorator CONVERSIONS |i 3 Free estimates \u00bb Walling, pointing & flagging 07757 535137) | omssz14/ oes s12982 e Loft windows dmawhomeimprovements@yahoo.com dhsdecorating@gmail.com * All types of roof & guttering works BINKS ROOFING * Plastering & rendering A FRIENDLY FAMILY-RUN BUSINESS %g",
+   "ad_text": "D Maw\nHigh-quality painting & decorating\nFully qualified & apprentice trained\nFree estimates\n27 years' experience\n07757 535137\ndmawhomeimprovements@yahoo.com",
+   "services": [
+    "painting",
+    "decorating"
+   ],
+   "tagline": "High-quality painting & decorating",
+   "trust_points": [
+    "Fully qualified",
+    "apprentice trained",
+    "Free estimates",
+    "27 years' experience"
+   ],
    "logo_note": "red script + brush",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/d-maw-painting-and-decorating/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/d-maw-painting-and-decorating/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/d-maw-painting-and-decorating/ad.png"
   },
   {
@@ -401,14 +637,24 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#d3e2cf",
-    "#236473",
-    "#468797",
-    "#1f3a46"
+    "#548688",
+    "#0f6474",
+    "#377c7e",
+    "#072f43"
    ],
-   "ad_text": "",
+   "ad_text": "D.H.S Decorating\nInterior & Exterior\nHigh-quality painter & Decorator\nFree estimates\n07938 779124 / 01723 512952\ndhsdecorating@gmail.com",
+   "services": [
+    "Interior Decorating",
+    "Exterior Decorating",
+    "Painting"
+   ],
+   "tagline": "High-quality painter & Decorator",
+   "trust_points": [
+    "Free estimates"
+   ],
    "logo_note": "white on teal header",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/dhs-decorating/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/dhs-decorating/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/dhs-decorating/ad.png"
   },
   {
@@ -422,14 +668,32 @@
    "town": "Scarborough",
    "county": "North Yorkshire",
    "palette": [
-    "#203b8c",
-    "#e2ac76",
-    "#c78856",
-    "#e6d2c3"
+    "#253e8e",
+    "#c08f50",
+    "#505885",
+    "#f3debf"
    ],
-   "ad_text": "",
+   "ad_text": "BINKS ROOFING\n\nA FRIENDLY FAMILY-RUN BUSINESS\n(Established over 40 years)\n\nNEW ROOFS, SLATING, TILING,\nVELUX WINDOWS FITTED,\nREPAIRS, POINTING, LEAD-WORK,\nUPVC FASCIAS & GUTTERING,\nGRP FLAT ROOFING...\n\nWe cover Scarborough to Hull & all surrounding areas.\nAll work guaranteed / fully insured.\n\nFREE no-obligation quotes.\n\n01723 639319 / 07715 335072",
+   "services": [
+    "New Roofs",
+    "Slating",
+    "Tiling",
+    "Velux Windows Fitted",
+    "Repairs",
+    "Pointing",
+    "Lead-work",
+    "uPVC Fascias & Guttering",
+    "GRP Flat Roofing"
+   ],
+   "tagline": "A FRIENDLY FAMILY-RUN BUSINESS",
+   "trust_points": [
+    "Established over 40 years",
+    "All work guaranteed",
+    "Fully insured"
+   ],
    "logo_note": "BINKS white ROOFING orange on blue",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/binks-roofing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/binks-roofing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/binks-roofing/ad.png"
   }
  ]

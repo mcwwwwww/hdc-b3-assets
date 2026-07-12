@@ -2,9 +2,13 @@
  "batch": "3.1",
  "formspree": "https://formspree.io/f/mpqgeoaj",
  "instructions": {
-  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England.",
-  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; }. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
-  "design": "Design each site from its palette[] colours and ad_text. Use palette[0] as the primary brand colour. Clean, modern, mobile-first, professional. Sections: hero (logo, business name, one-line pitch, phone call-to-action button with tel: link), services (from ad_text), why-choose-us / trust points (experience, insured, free quotes \u2014 only claims present in ad_text), service area (town + surrounding area), contact section.",
+  "what_to_build": "One complete self-contained single-page website per lead in this manifest (20 leads). Each site is ONE file named <slug>.html with ALL CSS and JS inline. No external fonts, scripts, or stylesheets. These are trial websites for small local trade businesses in Yorkshire, England \u2014 they must impress the owner enough to buy.",
+  "quality_bar_CRITICAL": "These pages are sold to the business owners, so they must look like a professional agency built them \u2014 NOT like a template. Spend equal, full effort on every one of the 20 sites, including the last ones. A flat page of centred text blocks is a failure. Every site needs: a designed hero with visual depth (layered gradients from the palette, a large CSS/SVG decorative motif drawn from the trade \u2014 e.g. a roofline silhouette for a roofer, leaf shapes for a gardener, tile grid for a tiler), distinct section backgrounds that alternate rhythm, cards or split layouts for services (not plain bullet lists), generous whitespace, a sticky header with the business name and a call button, large expressive typography (use system font stacks with strong weights/sizes \u2014 e.g. 900-weight condensed-feel headings via font-stretch/letter-spacing), hover states, subtle scroll animations (CSS only, respect prefers-reduced-motion), and a strong footer CTA band.",
+  "variety_rule": "The 20 sites must NOT share one layout. Vary hero composition (split hero / full-bleed gradient / diagonal section breaks / boxed card hero), section order, and graphic motifs so each looks individually designed for that trade. Two sites in the same trade must still look clearly different.",
+  "hero_logo_CRITICAL": "For each lead, fetch the plain-text file at logo_datauri_url. Its entire content is a single line starting with 'data:image/png;base64,'. Paste that whole string as the src of an <img> at the top of the hero section: <img class='hlogo' src='<the string>' alt='<business> logo'>. Style .hlogo { max-width: min(320px, 70vw); height: auto; display: block; margin: 0 auto 1rem; border-radius: 8px; }. If the logo has a solid background colour that clashes with the hero, put it on a white/light card with padding. Do NOT skip this. Do NOT try to fetch ad_image_url (you cannot fetch binary images) \u2014 the datauri text file IS the logo.",
+  "content": "Each lead now includes ad_text (verbatim transcription of their printed magazine advert), services[], tagline, and trust_points[] \u2014 all taken from the real ad. Build the services section from services[] (one card each, with a short benefit-focused sentence you write for that trade). Use tagline in the hero if present. Use trust_points for a why-choose-us strip. You may write natural marketing copy around these facts (local, friendly, reliable framing) but never invent specific claims: no made-up years of experience, prices, reviews, certifications, or guarantees that are not in trust_points/ad_text.",
+  "design": "palette[] is extracted from the business's LOGO. The site's colours MUST visibly match the logo: palette[0] (or the most saturated palette colour) is the primary brand colour for the header, buttons and section accents; the others are supporting tones; derive light/dark tints for backgrounds. A visitor must never see a logo whose colours clash with the page around it. Mobile-first, fast, accessible (contrast AA, focus states). Sections: hero (logo, business name, tagline/one-line pitch, phone CTA with tel: link), services, why-choose-us / trust points, service area (town + surrounding area, name nearby towns), contact.",
+  "trade_photo": "If the lead has a photo_datauri (or photo_datauri_url), it is a professional 16:9 photo of this trade. Use it large \u2014 as the hero background (with a palette-tinted overlay for text contrast) or as a split-hero / section image. Every site with a photo must actually display it.",
   "contact_form": "Every site gets a contact form posting to https://formspree.io/f/mpqgeoaj with method POST, fields: name, phone, message, and a hidden input name='_subject' value='<business> enquiry'. Also show the business phone number prominently with a tel: link.",
   "phone_rule": "Use the exact phone (and landline if present) given in this manifest. Never invent phone numbers, emails, addresses, prices, or reviews.",
   "email_rule": "Only show an email address if the manifest email field is non-empty; use it exactly as written.",
@@ -25,13 +29,26 @@
    "county": "South Yorkshire",
    "palette": [
     "#dbd7d4",
-    "#47a1bf",
-    "#7ebdcf",
-    "#edebea"
+    "#2b9dc0",
+    "#050582",
+    "#eae8e8"
    ],
-   "ad_text": "",
+   "ad_text": "Assured Roofing Contractors\nJ. Marshall\n07453 409379\njoe57marshall@gmail.com\nTiles Repaired\nFirestone Rubber Roofs\nDry Ridge Systems\nNew Roofs\nLead Chimney Repairs\nRidge Re-pointing\nTile, Flat, Pitched Roofs etc\nGutters, Fascias & Soffits Repaired & Replaced",
+   "services": [
+    "Tiles Repaired",
+    "Firestone Rubber Roofs",
+    "Dry Ridge Systems",
+    "New Roofs",
+    "Lead Chimney Repairs",
+    "Ridge Re-pointing",
+    "Tile, Flat, Pitched Roofs etc",
+    "Gutters, Fascias & Soffits Repaired & Replaced"
+   ],
+   "tagline": null,
+   "trust_points": [],
    "logo_note": "blue hammers+roof graphic with 'Assured Roofing Contractors' dark-blue text below; grey box ad, left column mid-page; email printed in ad",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/assured-roofing-contractors/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/assured-roofing-contractors/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/assured-roofing-contractors/ad.png"
   },
   {
@@ -46,12 +63,21 @@
    "county": "South Yorkshire",
    "palette": [
     "#fcfbdd",
-    "#a45f68",
-    "#dfcbbf"
+    "#ae2228",
+    "#bc9487",
+    "#9e3535"
    ],
-   "ad_text": "",
+   "ad_text": "AMP Electrical Services\nALL MIGHTY POWER\nNick Hamilton\nAll work carried out to 18th edition Regs BS7671\nnickhamilton.amp@gmail.com\n01709 378929 | 07941 926736\n12 Burnsall Crescent, Brinsworth S60 5HS",
+   "services": [
+    "Electrical Services"
+   ],
+   "tagline": "ALL MIGHTY POWER",
+   "trust_points": [
+    "All work carried out to 18th edition Regs BS7671"
+   ],
    "logo_note": "red 'AMP Electrical Services' wordmark with vertical LIGHT/POWER letters; cream box ad bottom-left; address 12 Burnsall Crescent Brinsworth S60 5HS; 18th edition Regs BS7671",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/amp-electrical/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/amp-electrical/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/amp-electrical/ad.png"
   },
   {
@@ -65,14 +91,40 @@
    "town": "Woodsetts",
    "county": "South Yorkshire",
    "palette": [
-    "#978487",
-    "#6f3947",
-    "#ccc5c4",
-    "#fbf6f2"
+    "#16375a",
+    "#fffcf4",
+    "#a1373e",
+    "#d4d1d4"
    ],
-   "ad_text": "",
+   "ad_text": "GJB BUILDING & JOINERY LTD\n\nYour Local All-in-One Building & Joinery Experts \u2013 Over 20 Years Experience\n\nGJB Building & Joinery Ltd is a trusted, family-run business based in Woodsetts. With over 20 years' experience, we pride ourselves on quality workmanship, reliability, and customer satisfaction. All work is fully insured and guaranteed.\n\nBUILDING\n- Extensions\n- Renovations\n- Plastering\n- Brickwork\n\nJOINERY\n- Kitchens\n- Doors\n- Stairs\n- Fitted furniture\n\nROOFING\n- Repairs\n- New roofs\n- Guttering\n- Fascias\n\nLANDSCAPING\n- Patios\n- Decking\n- Fencing\n- Driveways\n\nFree Quotes \u2013 No Job Too Big or Small\n\nJonathan Barker\n07841 721150\nBased in Woodsetts\nFully Insured & All Work Guaranteed\n\nScan to see our work & reviews on Facebook\n\nQuality you can trust \u2013 Local and Reliable",
+   "services": [
+    "Extensions",
+    "Renovations",
+    "Plastering",
+    "Brickwork",
+    "Kitchens",
+    "Doors",
+    "Stairs",
+    "Fitted furniture",
+    "Roofing Repairs",
+    "New roofs",
+    "Guttering",
+    "Fascias",
+    "Patios",
+    "Decking",
+    "Fencing",
+    "Driveways"
+   ],
+   "tagline": "Quality you can trust \u2013 Local and Reliable",
+   "trust_points": [
+    "Over 20 Years Experience",
+    "Trusted, family-run business",
+    "Fully Insured & All Work Guaranteed",
+    "Free Quotes \u2013 No Job Too Big or Small"
+   ],
    "logo_note": "FULL-PAGE ad. Real brand = 'GJB Building & Joinery Ltd' (red roof over blue GJB letters) \u2014 keeps name 'Jonathan Barker Garden Services' is OCR misparse; build site as GJB Building & Joinery Ltd, based in Woodsetts. Services: building/joinery/roofing/landscaping. Mobile 07841 721150 confirmed",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jonathan-barker-garden-services/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jonathan-barker-garden-services/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jonathan-barker-garden-services/ad.png"
   },
   {
@@ -86,14 +138,28 @@
    "town": "Blackburn/Preston",
    "county": "Lancashire",
    "palette": [
-    "#2b431d",
-    "#50703e",
-    "#e1ddd3",
-    "#8a8676"
+    "#405c2b",
+    "#edece7",
+    "#83c16c",
+    "#698c56"
    ],
-   "ad_text": "",
+   "ad_text": "FREE ESTIMATES\nJK LANDSCAPING\nReliable, Trusted, Local\nIndian Stone Patios\nBlock Paving\nPathways\nArtificial Lawns\nDecking\nGarden Design\nCall today for a FREE No Obligation Quote:\nT: 0161 451 0276\nM: 07931 866884",
+   "services": [
+    "Indian Stone Patios",
+    "Block Paving",
+    "Pathways",
+    "Artificial Lawns",
+    "Decking",
+    "Garden Design"
+   ],
+   "tagline": "Reliable, Trusted, Local",
+   "trust_points": [
+    "FREE Estimates",
+    "FREE No Obligation Quote"
+   ],
    "logo_note": "green badge; full-page ad",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jk-landscaping-lancs/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jk-landscaping-lancs/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jk-landscaping-lancs/ad.png"
   },
   {
@@ -107,14 +173,27 @@
    "town": "Chorley",
    "county": "Lancashire",
    "palette": [
-    "#3e78b2",
-    "#96b2b2",
-    "#444053",
-    "#cbd9d3"
+    "#ecf4f0",
+    "#b7cdba",
+    "#677865"
    ],
-   "ad_text": "",
+   "ad_text": "THE LITTLE FOOT ROOM PODIATRY\nYour Feet work hard for you everyday\nGive them the best care...\nPodiatry Assessments\nRoutine Nail Cutting, Corns & Callus\nThickened Nails\nIngrown Nail Care\nDiabetic Foot Care\nBio Mechanical Assessments\nCracked Heels & Fissures\nTREAT YOURSELF TO 20% OFF YOUR FIRST APPOINTMENT\nhcpc registered www.hcpc-uk.org\n07306 700 222\nthelittlefootroom@gmail.com\nFind us at Eclipse Hair & Beauty, 1 Talbot Drive, Euxton, Chorley PR7 6PD.",
+   "services": [
+    "Podiatry Assessments",
+    "Routine Nail Cutting, Corns & Callus",
+    "Thickened Nails",
+    "Ingrown Nail Care",
+    "Diabetic Foot Care",
+    "Bio Mechanical Assessments",
+    "Cracked Heels & Fissures"
+   ],
+   "tagline": "Your Feet work hard for you everyday. Give them the best care...",
+   "trust_points": [
+    "hcpc registered"
+   ],
    "logo_note": "green circle logo; at Eclipse Hair & Beauty, Euxton",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/the-little-foot-room-podiatry/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/the-little-foot-room-podiatry/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/the-little-foot-room-podiatry/ad.png"
   },
   {
@@ -129,13 +208,27 @@
    "county": "Lancashire",
    "palette": [
     "#f7f3e7",
-    "#5b1224",
-    "#867671",
-    "#b4a8a2"
+    "#90424b",
+    "#ecded6"
    ],
-   "ad_text": "",
+   "ad_text": "THE HOLLIE EDIT\n15% OFF FOR NEW CLIENTS\nBLOW & PINCURLS\nBLOW DRYS\nHAIR UP\nCOLOUR\nRESTYLES\nBALAYAGE\nFOILS & COLOUR\nCUT & BLOW DRY\nAVAILABLE FOR: MOBILE SERVICE | SEN APPOINTMENTS\n07508 901 589 | 01772 458 677\nthehollieedit@outlook.com\n77 Leyland Lane, PR25 1XB",
+   "services": [
+    "Blow & Pincurls",
+    "Blow Drys",
+    "Hair Up",
+    "Colour",
+    "Restyles",
+    "Balayage",
+    "Foils & Colour",
+    "Cut & Blow Dry",
+    "Mobile Service",
+    "SEN Appointments"
+   ],
+   "tagline": null,
+   "trust_points": [],
    "logo_note": "burgundy wordmark; asset crop verified correct",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/the-holle-edit/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/the-holle-edit/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/the-holle-edit/ad.png"
   },
   {
@@ -149,14 +242,25 @@
    "town": "Chorley",
    "county": "Lancashire",
    "palette": [
-    "#00376f",
-    "#ffde00",
-    "#a78d6d",
-    "#5f7375"
+    "#01245a",
+    "#004a89",
+    "#a1b6cb",
+    "#eaeff3"
    ],
-   "ad_text": "",
+   "ad_text": "JS Powerwashing Services\nBefore\nAfter\nBefore\nAfter\nBefore\nAfter\nOur Services\n- Patios\n- Astro Turf Cleaning\n- Fence Cleaning Decking\n- Driveways\n- Block Paving\n- Re-Sanding\nSpecial Promotion\nGet 10% OFF on all Powerwashing Services\nShow this booklet to get 10% off.\nContact Us\n07791155366\njs2578@msn.com\nAvailable via: Phone | Email | Facebook | WhatsApp",
+   "services": [
+    "Patios",
+    "Astro Turf Cleaning",
+    "Fence Cleaning Decking",
+    "Driveways",
+    "Block Paving",
+    "Re-Sanding"
+   ],
+   "tagline": null,
+   "trust_points": [],
    "logo_note": "white on navy header",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/js-powerwashing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/js-powerwashing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/js-powerwashing/ad.png"
   },
   {
@@ -170,14 +274,31 @@
    "town": "Chorley",
    "county": "Lancashire",
    "palette": [
-    "#989898",
-    "#ddd5ca",
-    "#c6b091",
-    "#f1ebe1"
+    "#fd9402",
+    "#fca526",
+    "#f3e0c1",
+    "#c19f6c"
    ],
-   "ad_text": "",
+   "ad_text": "ALL PROPERTY REPAIRS LARGE OR SMALL\nPLASTERING\nRENDERING\nDAMP PROBLEMS\nAll Plastering\nDamp Proof Courses\nDamp Plaster Removed\nDamp Chimney Breasts\nRoof Repairs - Any Height\nChimneys & Ridges Pointed\nSand & Cement Rendering\nCracked Rendering & Plaster Repairs\nFree Estimates!\nCall Paul\n07768 997 688",
+   "services": [
+    "Plastering",
+    "Rendering",
+    "Damp Proof Courses",
+    "Damp Plaster Removed",
+    "Damp Chimney Breasts",
+    "Roof Repairs",
+    "Chimneys & Ridges Pointed",
+    "Sand & Cement Rendering",
+    "Cracked Rendering & Plaster Repairs",
+    "Property Repairs"
+   ],
+   "tagline": "ALL PROPERTY REPAIRS LARGE OR SMALL",
+   "trust_points": [
+    "Free Estimates!"
+   ],
    "logo_note": "text-only ad; orange title as wordmark",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-plastering-rendering-and-damp/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-plastering-rendering-and-damp/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/paul-plastering-rendering-and-damp/ad.png"
   },
   {
@@ -191,14 +312,25 @@
    "town": "Kiveton Park",
    "county": "South Yorkshire",
    "palette": [
-    "#cec7ad",
-    "#e0ded0",
-    "#857242",
-    "#aca97f"
+    "#a3a180",
+    "#695d46",
+    "#dce2ce"
    ],
-   "ad_text": "",
+   "ad_text": "Traditional recipes like Grandma used to make\nSTEPH & JENNY'S KITCHEN\nYou can't beat the traditional favourites!\nOur meals are made in small batches using the freshest ingredients, creating tasty wholesome meals. They are delivered to your door chilled the very same day, served as individual portions and microwave friendly. We offer weekly changing menus with options for freshly baked cakes. Where applicable, meals will be served with a side of potatoes and fresh vegetables.\nOUR CHOICES INCLUDE:\nShepherds/cottage pie\nChicken and leek hotpot\nSausage casserole\nPasta bolognese\nBraised beef and onions\nBacon hotpot\n...and much more!\n10% DISCOUNT ON ORDERS OVER \u00a315\nALL MEALS \u00a35.95 EACH\nFREE DELIVERY ON ORDERS OVER \u00a315\nPLEASE CONTACT STEPH FOR MORE INFORMATION: 07813 923595\nBased in Kiveton",
+   "services": [
+    "Home-cooked meal delivery",
+    "Weekly changing menus",
+    "Freshly baked cakes"
+   ],
+   "tagline": "Traditional recipes like Grandma used to make",
+   "trust_points": [
+    "Made in small batches using the freshest ingredients",
+    "Delivered to your door chilled the very same day",
+    "Microwave friendly"
+   ],
    "logo_note": "chef-hat circle logo; bottom half of asset",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/steph-and-jennys-kitchen/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/steph-and-jennys-kitchen/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/steph-and-jennys-kitchen/ad.png"
   },
   {
@@ -212,14 +344,26 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#818286",
-    "#ccc9c3",
-    "#a7afab",
-    "#ebeae8"
+    "#757b7f",
+    "#595c5f",
+    "#d8dbdc",
+    "#769f9f"
    ],
-   "ad_text": "",
+   "ad_text": "EXPERIENCED TILER WITHIN THE YORK AREA\nSHAUN WILSON TILING SPECIALIST\nOVER 25YRS' EXPERIENCE\n\u2022 DOMESTIC & COMMERCIAL TILER\n\u2022 ALL TILING WORK UNDERTAKEN\n\u2022 BATHROOM, KITCHEN TILING\n\u2022 OUTDOOR TILING\n\u2022 ALL WORK GUARANTEED\n07766 180380\nSHAUNWILSONTILING@BTINTERNET.COM",
+   "services": [
+    "Domestic & commercial tiling",
+    "Bathroom tiling",
+    "Kitchen tiling",
+    "Outdoor tiling"
+   ],
+   "tagline": "EXPERIENCED TILER WITHIN THE YORK AREA",
+   "trust_points": [
+    "Over 25 years' experience",
+    "All work guaranteed"
+   ],
    "logo_note": "S tiles logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/shaun-wilson-tiling/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/shaun-wilson-tiling/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/shaun-wilson-tiling/ad.png"
   },
   {
@@ -233,14 +377,26 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#141d25",
-    "#3f78ba",
-    "#16395c",
-    "#7f7b89"
+    "#181d21",
+    "#8dabc6"
    ],
-   "ad_text": "",
+   "ad_text": "KML ROOFING\nSpecialists in:\nFlat Roofing,\nGRP Systems,\nRe-Roofs,\nRoofing Repairs,\nGutter Cleaning,\nRepairs & Loft Conversions\nFOR A FREE QUOTE CALL\n07824 119792\nkmlroofing@hotmail.com",
+   "services": [
+    "Flat Roofing",
+    "GRP Systems",
+    "Re-Roofs",
+    "Roofing Repairs",
+    "Gutter Cleaning",
+    "Repairs",
+    "Loft Conversions"
+   ],
+   "tagline": null,
+   "trust_points": [
+    "Free quote"
+   ],
    "logo_note": "white roof logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/kml-roofing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/kml-roofing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/kml-roofing/ad.png"
   },
   {
@@ -254,14 +410,23 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#fdf0df",
-    "#ec9326",
-    "#855a37",
-    "#e0ccb5"
+    "#f5841f",
+    "#e4e2e0",
+    "#f49335",
+    "#e2cdb8"
    ],
-   "ad_text": "",
+   "ad_text": "SDS Decorator\n\n\u2022 Fully insured\n\u2022 Time-served - over 15 years' experience\n\u2022 FREE no-obligation quotes\n\u2022 NO JOB TOO BIG OR SMALL",
+   "services": [
+    "Decorating"
+   ],
+   "tagline": "NO JOB TOO BIG OR SMALL",
+   "trust_points": [
+    "Fully insured",
+    "Time-served - over 15 years' experience"
+   ],
    "logo_note": "orange script logo; FB only",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/sds-decorator/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/sds-decorator/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/sds-decorator/ad.png"
   },
   {
@@ -275,14 +440,32 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#040402",
-    "#f9c74b",
-    "#847a62",
-    "#474234"
+    "#f9c74a",
+    "#231f20",
+    "#fbd064",
+    "#fef6e1"
    ],
-   "ad_text": "",
+   "ad_text": "RJS Carpentry & Joinery\nNo joinery job is too big or small. Kitchens and Bathrooms from conception to expert finish.\n\u2022 Fencing \u2022 Decking \u2022 Skirting\n\u2022 Architrave \u2022 Doors \u2022 Flooring\n\u2022 Flat pack assembly\nGet in touch today for a FREE no-obligation quote",
+   "services": [
+    "Carpentry",
+    "Joinery",
+    "Kitchens",
+    "Bathrooms",
+    "Fencing",
+    "Decking",
+    "Skirting",
+    "Architrave",
+    "Doors",
+    "Flooring",
+    "Flat pack assembly"
+   ],
+   "tagline": "No joinery job is too big or small.",
+   "trust_points": [
+    "FREE no-obligation quote"
+   ],
    "logo_note": "black on yellow header",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/rjs-carpentry-and-joinery/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/rjs-carpentry-and-joinery/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/rjs-carpentry-and-joinery/ad.png"
   },
   {
@@ -297,13 +480,22 @@
    "county": "North Yorkshire",
    "palette": [
     "#231f20",
-    "#8e7667",
-    "#5c9cbc",
-    "#546065"
+    "#3a2e2f",
+    "#6e91a4"
    ],
-   "ad_text": "",
+   "ad_text": "K.P.G. DECORATING\nPAINTING & WALLPAPER HANGING\nOur work varies from high quality painting & decorating with private customers & working with interior designers to shop fitting companies & estate management\nInterior Painting & Decorating\nWallpaper Hanging \u2022 Commercial Painting\nAirless Spraying\nGet in contact with K.P.G. Decorating Painting & Wallpaper Hanging today.\nKevin: 079167 70178\nor James: 07852 394351",
+   "services": [
+    "Painting",
+    "Wallpaper Hanging",
+    "Interior Painting & Decorating",
+    "Commercial Painting",
+    "Airless Spraying"
+   ],
+   "tagline": "PAINTING & WALLPAPER HANGING",
+   "trust_points": [],
    "logo_note": "framed header; Kevin 07916770178/James 07852394351",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/k-p-g-decorating/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/k-p-g-decorating/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/k-p-g-decorating/ad.png"
   },
   {
@@ -317,14 +509,29 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#081730",
-    "#7c6753",
-    "#978673",
-    "#514f4c"
+    "#03162f",
+    "#cabc9e",
+    "#000413",
+    "#302d2e"
    ],
-   "ad_text": "",
+   "ad_text": "A&J JOINERY\nYOUR VISION, OUR CREATION\nA&J JOINERY\nA&J Joinery is a family-run business specialising in bespoke, made-to-measure carpentry.\nServices:\n- Fitted Wardrobes\n- Media Walls\n- Alcove Units\n- Kitchen Joinery\n- Doors & Staircases\nWhy Choose Us:\n- Over 20 years' experience\n- Fully insured\n- 5-Star Google Reviews\n- Free quotations",
+   "services": [
+    "Fitted Wardrobes",
+    "Media Walls",
+    "Alcove Units",
+    "Kitchen Joinery",
+    "Doors & Staircases"
+   ],
+   "tagline": "A&J Joinery is a family-run business specialising in bespoke, made-to-measure carpentry.",
+   "trust_points": [
+    "Over 20 years' experience",
+    "Fully insured",
+    "5-Star Google Reviews",
+    "Free quotations"
+   ],
    "logo_note": "gold circular emblem",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/a-and-j-joinery-york/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/a-and-j-joinery-york/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/a-and-j-joinery-york/ad.png"
   },
   {
@@ -339,13 +546,29 @@
    "county": "North Yorkshire",
    "palette": [
     "#1f1d1e",
-    "#df6f4a",
-    "#b0b3b5",
-    "#483a34"
+    "#8e8d8d",
+    "#a6664b",
+    "#39322f"
    ],
-   "ad_text": "",
+   "ad_text": "York, North Yorkshire\nA.J.Joinery24@gmail.com\nXTREME ROOFING\nA TOP TIER ROOFING SERVICE\nRe-Roofs & Roof Repairs\nRubber & GRP Fibreglass Flat Roofs\nFascias, Soffits & Guttering\nDry Ridge & Dry Verge Systems\nVelux Windows & Dormers\nQUALITY > FAIR PRICED > LOCALLY OWNED > 15 YEAR GUARANTEE with all new roofs\nCall Ben at Xtreme Roofing now for your FREE, no obligation quote\nMobile: 07902 494124\nPhone: 01904 373067\nEmail: xtreme_elite_roofing@outlook.com\nCURE IT GRP ROOFING SYSTEM\nVELUX",
+   "services": [
+    "Re-Roofs & Roof Repairs",
+    "Rubber & GRP Fibreglass Flat Roofs",
+    "Fascias, Soffits & Guttering",
+    "Dry Ridge & Dry Verge Systems",
+    "Velux Windows & Dormers"
+   ],
+   "tagline": "A TOP TIER ROOFING SERVICE",
+   "trust_points": [
+    "QUALITY",
+    "FAIR PRICED",
+    "LOCALLY OWNED",
+    "15 YEAR GUARANTEE with all new roofs",
+    "FREE, no obligation quote"
+   ],
    "logo_note": "XTREME roof logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/xtreme-roofing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/xtreme-roofing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/xtreme-roofing/ad.png"
   },
   {
@@ -360,13 +583,28 @@
    "county": "North Yorkshire",
    "palette": [
     "#1e2c5b",
-    "#916c48",
-    "#b38d67",
-    "#d0c3b5"
+    "#363c5b",
+    "#f1f1ef",
+    "#ac9893"
    ],
-   "ad_text": "",
+   "ad_text": "LEWIS Joinery\nJoinery & Building Services\nOver 20 years' kitchen fitting experience\nsash window service and Repairs\nFitted wardrobes | Garage conversions\nBespoke alcove units\nAll work project managed from start to finish\nCall 07565 890702",
+   "services": [
+    "Joinery",
+    "Building Services",
+    "Kitchen fitting",
+    "Sash window service and repairs",
+    "Fitted wardrobes",
+    "Garage conversions",
+    "Bespoke alcove units"
+   ],
+   "tagline": "Joinery & Building Services",
+   "trust_points": [
+    "Over 20 years' kitchen fitting experience",
+    "All work project managed from start to finish"
+   ],
    "logo_note": "LEWIS white serif over orange 'Joinery' on navy band; printed mobile 07565 890702 confirmed (csv OCR 690702 was wrong)",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lewis-joinery/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lewis-joinery/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/lewis-joinery/ad.png"
   },
   {
@@ -380,13 +618,23 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#717276",
-    "#aaa7a8",
-    "#424040"
+    "#212725",
+    "#b9bcba"
    ],
-   "ad_text": "",
+   "ad_text": "JC YORKSHIRE ROOFING AND REPAIRS\n\nYORK BASED\n\n20 YEARS OF EXPERIENCE!\n\nReliable and affordable roofing services to the highest standards.\n\nWE OFFER FREE QUOTES, GET IN TOUCH TODAY!",
+   "services": [
+    "roofing services",
+    "roofing repairs"
+   ],
+   "tagline": "Reliable and affordable roofing services to the highest standards.",
+   "trust_points": [
+    "York based",
+    "20 years of experience",
+    "Free quotes"
+   ],
    "logo_note": "circular JC roof+hammer logo",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jc-yorkshire-roofing/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jc-yorkshire-roofing/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/jc-yorkshire-roofing/ad.png"
   },
   {
@@ -400,14 +648,24 @@
    "town": "York",
    "county": "North Yorkshire",
    "palette": [
-    "#01559d",
-    "#548cbb",
-    "#cfdfec",
-    "#89b0d1"
+    "#03579c",
+    "#2970ab",
+    "#abc7de",
+    "#d6e4ef"
    ],
-   "ad_text": "",
+   "ad_text": "Clifton Carpet Cleaning\n\u00a340 per room \u2022 Through lounge \u00a350\nHall and stairs \u00a350\nMats & Rugs Cleaned FREE with any Carpet Cleaning!\nLocal company prepared to travel\nCall Mick for a free quote 07985 270375",
+   "services": [
+    "Carpet Cleaning",
+    "Mats & Rugs Cleaning"
+   ],
+   "tagline": null,
+   "trust_points": [
+    "Local company prepared to travel",
+    "Free quote"
+   ],
    "logo_note": "blue CCC wordmark",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/clifton-carpet-cleaning/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/clifton-carpet-cleaning/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/clifton-carpet-cleaning/ad.png"
   },
   {
@@ -421,14 +679,25 @@
    "town": "Wetherby",
    "county": "West Yorkshire",
    "palette": [
-    "#5dc8d8",
-    "#5e5358",
-    "#91d8e3",
-    "#7abdc8"
+    "#5cc7d9",
+    "#b92b2b",
+    "#9dc4cb",
+    "#7b888f"
    ],
-   "ad_text": "",
+   "ad_text": "Sally-Anne's Carpet & Upholstery Cleaning\n\nGive your carpets & upholstery a new lease of life. You'll be amazed how good they look!\n\n07989 390880\n\nNCCA National Carpet Cleaners Association\nCLEANING THE NATION'S CARPETS AND UPHOLSTERY\n\"Service With Integrity\"\nSince 1968",
+   "services": [
+    "Carpet Cleaning",
+    "Upholstery Cleaning"
+   ],
+   "tagline": "Give your carpets & upholstery a new lease of life. You'll be amazed how good they look!",
+   "trust_points": [
+    "National Carpet Cleaners Association (NCCA) member",
+    "Service With Integrity",
+    "Since 1968"
+   ],
    "logo_note": "red script on light blue",
    "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/sallyannes-carpet-cleaning/logo.datauri.txt",
+   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/sallyannes-carpet-cleaning/photo.datauri.txt",
    "ad_image_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/sallyannes-carpet-cleaning/ad.png"
   }
  ]
