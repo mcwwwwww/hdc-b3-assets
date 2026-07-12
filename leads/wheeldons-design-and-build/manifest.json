@@ -2,7 +2,7 @@
  "formspree": "https://formspree.io/f/mpqgeoaj",
  "instructions": {
   "what_to_build": "ONE complete, self-contained single-page website for the business in this manifest. One file: <slug>.html, ALL CSS/JS inline, no external anything. This is a trial website that will be sold to the business owner \u2014 it must look like a top design agency built it specifically for this business.",
-  "assets": "Fetch lead.logo_datauri_url (the business's REAL logo) and lead.photo_datauri_url (a professional photo of this trade). Each is a plain text file containing ONE line starting 'data:image/...;base64,'. After fetching, check the length matches lead.logo_datauri_chars / lead.photo_datauri_chars exactly \u2014 if shorter, your fetch truncated: refetch, and if it still truncates, STOP and report the lengths you received instead of shipping a broken image. Logo goes in the hero as <img class='hlogo' src='<the full string>'>. Photo is displayed large (hero background with palette-tinted overlay, or split hero). Paste both strings as-is.",
+  "assets": "Do NOT fetch or write any base64/data URIs \u2014 images are injected after delivery. Put the literal placeholder token __LOGO_DATAURI__ where the logo image source goes, and __PHOTO_DATAURI__ where the trade photo source goes. Hero logo: <img class='hlogo' src='__LOGO_DATAURI__' alt='<business> logo' width='<lead.logo_width>' height='<lead.logo_height>'> (real pixel dims are in the lead \u2014 size .hlogo with aspect-ratio so layout is correct before injection). Trade photo (16:9 JPEG, dims in lead.photo_width/photo_height): display it LARGE \u2014 either <img src='__PHOTO_DATAURI__'> in a split hero, or a hero background via an inline style or CSS rule background-image:url(__PHOTO_DATAURI__) with a palette-tinted overlay for text contrast. Use each token exactly once.",
   "brand_colours": "lead.palette[] is extracted from the logo. The page MUST look like the logo's brand: the most saturated palette colour drives the header, buttons and accents; the rest are supporting tones and background tints. Logo sits on a background it reads cleanly against (add a light card behind it if needed).",
   "content": "Build copy from lead.ad_text / services[] / tagline / trust_points[] (all transcribed from their real printed advert). Services as designed cards with a short benefit line each. Trust points as a strip. Friendly professional Yorkshire tone. Never invent specific claims, prices, reviews, certifications, or contact details.",
   "structure": "Sticky header (business name + call button) / hero (logo, tagline or one-line pitch, phone CTA with tel:) / services cards / why-choose-us trust strip / service area (town + nearby areas) / contact (form + phone) / footer '<business> \u2014 <town>, <county>'.",
@@ -12,8 +12,8 @@
   "deliverable": "Return the single <slug>.html file as a downloadable file."
  },
  "acceptance_checklist": [
-  "The hero shows the real logo: an <img> whose src is EXACTLY the provided logo_datauri string",
-  "The trade photo (photo_datauri) is displayed large in the hero or a main section",
+  "The hero has <img class='hlogo' src='__LOGO_DATAURI__'> with correct width/height attributes \u2014 the literal token, no base64 anywhere in the file",
+  "__PHOTO_DATAURI__ is used exactly once, displayed large (split-hero <img> or hero background-image) with a palette-tinted overlay if text sits on it",
   "Header, buttons and accents visibly use the palette[] colours taken from the logo \u2014 logo and page look like one brand",
   "Every service in services[] appears, as styled cards (not a plain bullet list)",
   "The only phone numbers on the page are the manifest's phone (and landline); tel: links work; phone CTA visible without scrolling on mobile",
@@ -25,6 +25,10 @@
  ],
  "lead": {
   "slug": "wheeldons-design-and-build",
+  "logo_width": 561,
+  "logo_height": 170,
+  "photo_width": 800,
+  "photo_height": 457,
   "business": "Wheeldon's Design & Build",
   "contact": "",
   "phone": "07940 327070",

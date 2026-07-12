@@ -1,6 +1,10 @@
 [
  {
   "slug": "wheeldons-design-and-build",
+  "logo_width": 561,
+  "logo_height": 170,
+  "photo_width": 800,
+  "photo_height": 457,
   "business": "Wheeldon's Design & Build",
   "contact": "",
   "phone": "07940 327070",
@@ -34,6 +38,10 @@
  },
  {
   "slug": "r-milner-roofing-and-building-contractors",
+  "logo_width": 503,
+  "logo_height": 127,
+  "photo_width": 800,
+  "photo_height": 457,
   "business": "R Milner Roofing & Building Contractors",
   "contact": "R Milner",
   "phone": "07811 365196",
@@ -72,6 +80,10 @@
  },
  {
   "slug": "zachary-hardgrave-plastering-and-rendering",
+  "logo_width": 604,
+  "logo_height": 126,
+  "photo_width": 800,
+  "photo_height": 457,
   "business": "Zachary Hardgrave Plastering & Rendering",
   "contact": "Zachary Hardgrave",
   "phone": "07534 312356",
