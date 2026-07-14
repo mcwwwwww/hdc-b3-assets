@@ -25,8 +25,8 @@
  ],
  "lead": {
   "slug": "custom-automotive-keys",
-  "logo_width": 555,
-  "logo_height": 101,
+  "logo_width": 665,
+  "logo_height": 115,
   "photo_width": 800,
   "photo_height": 436,
   "business": "Custom Automotive Keys",
@@ -38,10 +38,10 @@
   "town": "Haxby",
   "county": "North Yorkshire",
   "palette": [
-   "#3f90d0",
-   "#3584c0",
-   "#30658c",
-   "#c4d8e7"
+   "#3f8fcd",
+   "#3281bd",
+   "#316994",
+   "#e7edf3"
   ],
   "ad_text": "CUSTOM AUTOMOTIVE KEYS\n\nCar key cutting & programming\nAll keys lost service\nMobile service\nHousehold keys\n\nContact Jason\n07885 944400\ncustomautokeys@gmail.com\n\nLocated near the Haxby Sports Bar",
   "services": [
@@ -55,7 +55,7 @@
   "logo_note": "white italic CUSTOM AUTOMOTIVE KEYS text on blue, car-key photo right",
   "logo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/custom-automotive-keys/logo.datauri.txt",
   "photo_datauri_url": "https://raw.githubusercontent.com/mcwwwwww/hdc-b3-assets/main/leads/custom-automotive-keys/photo.datauri.txt",
-  "logo_datauri_chars": 19590,
+  "logo_datauri_chars": 24946,
   "photo_datauri_chars": 31547
  }
 }
