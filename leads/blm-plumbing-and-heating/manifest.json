@@ -21,7 +21,8 @@
   "Contact form POSTs to the formspree URL with fields name, phone, message and hidden _subject",
   "Page is one self-contained .html file: no external fonts/scripts/images, works offline",
   "Distinct, designed layout: layered hero, trade-specific CSS/SVG motif, hover states, subtle CSS-only animations, prefers-reduced-motion respected",
-  "<title> is '<business> | <category> in <town>' and there is a meta description"
+  "<title> is '<business> | <category> in <town>' and there is a meta description",
+  "First viewport test: at desktop (~1280x900) AND mobile (~390x844) the hero logo, h1 and phone CTA are all visible WITHOUT scrolling \u2014 check that no decorative element (SVG motif, spacer) has fallen into the document flow and pushed the hero content down"
  ],
  "lead": {
   "slug": "blm-plumbing-and-heating",
